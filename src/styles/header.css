@@ -1,0 +1,199 @@
+header {
+  height: 65px;
+  /* border-bottom: 1px solid lightgray; */
+  top: 0;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  position: fixed;
+  background-color: white;
+}
+
+header .inner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+header a {
+  color: black;
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+header a:hover {
+  color: #0078d7 !important;
+  opacity: none;
+}
+
+header a:hover {
+  opacity: 0.7;
+}
+
+.brand img {
+  width: 170px;
+}
+
+.login-button {
+  font-size: 1.35rem;
+}
+
+.brand {
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.inner-content ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+/* media queries */
+@media (min-width: 1236px) {
+  .brand {
+    margin-left: 74px;
+  }
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+
+.divisible-content {
+  display: flex;
+}
+
+.user-content {
+  display: flex;
+  padding-right: 20px;
+  position: relative;
+  top: -10px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.log-nav {
+  padding-top: 8px;
+  margin-left: 5px;
+  font-weight: lighter;
+  /* padding-right: 25px; */
+}
+
+header .MuiAvatar-root {
+  top: -7px;
+}
+
+.drop-data {
+  display: flex;
+  flex-direction: row !important;
+}
+
+.btn-success {
+  background-color: black !important;
+  border: 0 solid black !important;
+  display: flex;
+  border-radius: 100px;
+}
+
+.btn-primary {
+  background-color: #0078d7 !important;
+  color: #fff;
+}
+
+.dropdown {
+  border-radius: 4px !important;
+}
+
+.dropdown-toggle:focus {
+  box-shadow: none !important;
+}
+.dropdown-item {
+  font-size: 1.1rem;
+  padding-left: 10px !important;
+  padding-right: 0px !important;
+}
+
+.dropdown-item:hover {
+  background-color: #fff;
+  color: #0078d7 !important;
+}
+
+.dropdown-menu {
+  /* position: absolute; */
+  /* left: 50px !important;
+  top: -53px !important; */
+  position: absolute !important;
+  left: 10px !important;
+}
+
+.brand {
+  cursor: pointer;
+}
+
+.dropdown-toggle::after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  position: relative !important;
+  top: 20px !important;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "" !important;
+  /* border-top: 0.3em solid; */
+  border-top: 0em solid;
+  /* border-right: 0.3em solid transparent; */
+  border-right: 0em solid transparent;
+  border-bottom: 0;
+  /* border-left: 0.3em solid transparent; */
+  border-left: 0em solid transparent;
+}
+
+.MuiAvatar-root {
+  position: relative !important;
+  top: 0.5px !important;
+  left: -7px;
+}
+
+.drop-item {
+  display: flex;
+}
+
+.drop-label {
+  font-weight: lighter;
+  padding-left: 5px;
+  font-size: 1.08rem;
+}
+
+header .dropdown-toggle {
+  position: relative !important;
+  top: -3px !important;
+}
+
+@media (max-width: 580px) {
+  .log-nav {
+    display: none;
+  }
+  .btn-success {
+    background-color: #fff !important;
+  }
+
+  .brand {
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .contact-us {
+    display: none;
+  }
+}

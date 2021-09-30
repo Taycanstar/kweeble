@@ -1,0 +1,267 @@
+.home-content {
+  padding-top: 120px;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 1236px) {
+  .home-content {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+.value-prop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 98.5px;
+  margin-right: 98.5px;
+}
+
+.main-title {
+  padding-bottom: 10px;
+
+  text-align: center;
+}
+.main-title h1 {
+  font-size: 54px;
+  line-height: 150%;
+}
+
+.secondary-title {
+  padding-bottom: 30px;
+
+  text-align: center;
+}
+
+.secondary-title h5 {
+  font-size: 24px;
+}
+
+.main-btns {
+  padding-bottom: 20px;
+}
+.signup-btn {
+  padding: 16px 80px;
+  background-color: #0078d7;
+  color: #fff;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 3px;
+  letter-spacing: 1.5px;
+  line-height: normal;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-btn:hover {
+  background-color: #1d97fc;
+  cursor: pointer;
+}
+
+.login-cta {
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.dir-title {
+  padding-bottom: 10px;
+  margin-bottom: 3px;
+}
+
+.search-input {
+  border-radius: 50px;
+  padding: 10px;
+  border: none;
+  /* box-shadow: 0px 0px 4px 0px rgb(0 0 0 / 40%); */
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  background-color: #eff2f5;
+}
+
+.result-card {
+  display: flex;
+  box-shadow: rgb(0 0 0 / 8%) 2px 4px 8px;
+
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.user-info-card {
+  margin-left: 10px;
+}
+
+.card-display-name {
+  font-size: 1.3rem;
+  padding-top: 5px;
+  padding-bottom: 10px;
+
+  margin-right: 10px;
+}
+
+.card-display-info {
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.main-name {
+  display: flex;
+}
+
+.dot {
+  padding-top: 8px;
+}
+
+.eckerd-card {
+  font-size: 1.2rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 10px;
+  color: teal;
+}
+
+.polk-card {
+  font-size: 1.2rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 10px;
+  color: rgb(221 0 60);
+}
+
+.college-label {
+  margin-right: 10px;
+}
+
+.colleges {
+  margin-bottom: 20px;
+}
+
+.college-list {
+  width: 78.8%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 3px 0px rgb(0 0 0 / 30%);
+}
+
+.social-icons {
+  display: flex;
+  padding-bottom: 7px;
+}
+
+.media-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.social-icon1 {
+  display: flex;
+  padding-bottom: 7px;
+  padding-top: 3px;
+}
+
+.card-display-info-media {
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin-bottom: 5px;
+  margin-right: 15px;
+}
+
+@media (max-width: 580px) {
+  .eckerd-card {
+    font-size: 1rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 3px;
+    color: teal;
+  }
+  .polk-card {
+    font-size: 1rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    color: rgb(221 0 60);
+  }
+  .card-display-info-media {
+    font-size: 0.85rem;
+    font-weight: normal;
+    margin-bottom: 5px;
+    margin-right: 15px;
+  }
+  .card-display-info {
+    font-size: 0.85rem;
+    font-weight: normal;
+    margin-bottom: 5px;
+  }
+  .signup-btn {
+    padding: 16px 25px;
+    background-color: #0078d7;
+    color: #fff;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 3px;
+    letter-spacing: 1.5px;
+    line-height: normal;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: 200px;
+  }
+
+  .login-cta {
+    color: black;
+    padding-bottom: 50px;
+  }
+  .secondary-title {
+    padding-bottom: 40px;
+    padding-top: 10px;
+    width: 300px;
+  }
+  .home-content {
+    padding-top: 120px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-display-name {
+    font-size: 1rem;
+    padding-top: 5px;
+    padding-bottom: 10px;
+
+    margin-right: 3px;
+  }
+
+  .card-display-info-media {
+    font-size: 0.8rem;
+    font-weight: normal;
+    margin-bottom: 5px;
+    margin-right: 5px;
+  }
+  .card-display-info {
+    font-size: 0.8rem;
+    font-weight: normal;
+    margin-bottom: 5px;
+  }
+  .main-title h1 {
+  font-size: 40px;
+  line-height: 150%;
+}
+
+.secondary-title h5 {
+  font-size: 20px;
+}
+}

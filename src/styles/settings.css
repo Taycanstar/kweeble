@@ -1,0 +1,381 @@
+.settings-content {
+  background-color: #f4f4f4;
+  padding-top: 85px;
+  width: 100%;
+  height: 100vh;
+  padding-left: 38px;
+  padding-right: 38px;
+}
+
+.settings-card {
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  background-color: #fff;
+  box-shadow: rgb(0 0 0 / 6%) 0px 2px 8px;
+  border-radius: 8px;
+}
+
+.settings-title {
+  margin-bottom: 15px;
+  padding-left: 16px;
+}
+
+.settings-options {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-weight: lighter;
+  font-size: 1rem;
+}
+
+.settings-opt {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 16px;
+}
+
+.settings-opt:hover {
+  cursor: pointer;
+  background-color: rgba(245, 244, 244, 0.5);
+}
+
+.arrow {
+  position: relative !important;
+  top: 8px;
+}
+.settings-content a {
+  text-decoration: none;
+  color: black;
+}
+/*Your Account */
+.account-content a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+}
+.account-content {
+  background-color: #f4f4f4;
+  padding-top: 85px;
+  width: 100%;
+  height: 100vh;
+  padding-left: 38px;
+  padding-right: 38px;
+}
+
+.account-header {
+  display: flex;
+  padding-left: 16px;
+}
+
+.arrow-back {
+  position: relative;
+  top: -8px;
+  padding-right: 18px;
+}
+
+.account-title {
+  margin-bottom: 15px;
+}
+
+.acc-description {
+  padding-left: 16px;
+  padding-right: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  padding-bottom: 15px;
+}
+
+.account-opt {
+  display: flex;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 100%;
+}
+.account-opt:hover {
+  cursor: pointer;
+  background-color: rgba(245, 244, 244, 0.5);
+}
+
+.acc-icon {
+  position: relative;
+  top: 6px;
+}
+
+/* Acc information */
+.acc-info-content {
+  background-color: #f4f4f4;
+  padding-top: 85px;
+  width: 100%;
+  height: 100vh;
+  padding-left: 38px;
+  padding-right: 38px;
+}
+
+.acc-info-opt {
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.acc-info-opt:hover {
+  cursor: pointer;
+  background-color: rgba(245, 244, 244, 0.5);
+}
+.acc-options {
+  padding-top: 12px;
+  padding-bottom: 5px;
+  font-size: 1rem;
+}
+
+.acc-mid-label {
+  font-size: 0.85rem;
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.65);
+  padding-bottom: 10px;
+}
+
+.arrow-fow {
+  position: relative;
+  top: 18px;
+}
+
+.acc-info-content a {
+  text-decoration: none;
+  color: black;
+}
+
+.acc-mid-label-x {
+  padding-top: 20px;
+  font-size: 0.85rem;
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.65);
+  padding-bottom: 20px;
+}
+
+.verify-password-opt {
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* emai */
+.top-label-email {
+  font-size: 0.8rem;
+  position: relative;
+  top: 20px;
+  left: 10px;
+  color: #0078d7;
+  font-weight: lighter;
+}
+
+.edit-email-input {
+  border: none;
+  /* border-bottom: lightgray solid 1px; */
+
+  width: 90%;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  padding-bottom: 8px;
+  padding-top: 25px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #ecf2f5;
+  border-radius: 4px;
+  height: 50px;
+  /* box-shadow: rgb(0 0 0 / 6%) 0px 2px 8px; */
+}
+
+.email-content {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.edit-email-input:hover {
+  border: 1px solid #fff;
+}
+
+.edit-email-input:focus {
+  border: 1px solid #0078d7;
+}
+
+.text-danger {
+  color: red;
+}
+
+.text-success {
+  color: #4bb543;
+  font-size: 0.85rem;
+}
+
+#hideMe {
+  -moz-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 5s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+#pass-1 {
+  margin-bottom: 20px;
+}
+
+.vision-change {
+  position: relative;
+  left: 480px;
+  top: -58px;
+  margin-left: 10px;
+  width: 20px;
+  height: 10px;
+}
+
+.deac-btn {
+  margin-top: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.deactivate-btn {
+  color: rgb(244, 33, 46);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.deac-btn:hover {
+  background-color: rgba(244, 33, 46, 0.2);
+}
+
+.deac-btn:active {
+  background-color: rgba(244, 33, 46, 0.4);
+}
+
+.deact-btn {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 65px;
+}
+
+.final-btn {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 50px;
+  border: none;
+  background-color: rgb(244, 33, 46);
+  color: #fff;
+  cursor: pointer;
+}
+
+.final-btn:hover {
+  background-color: rgb(231, 33, 43);
+}
+
+/*Privacy*/
+.privacy-main {
+  padding-top: 70px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.priv-title {
+  padding-top: 25px;
+  font-size: 1.7rem;
+  padding-bottom: 25px;
+}
+
+.priv-main-par {
+  font-size: 1.6rem;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.con-main {
+  position: relative;
+  background-color: #0078d7;
+  width: 100%;
+  height: 100vh;
+  padding-top: 70px;
+  color: #fff;
+}
+
+.con-title {
+  padding-top: 25px;
+  padding-left: 100px;
+  padding-bottom: 15px;
+}
+
+.con-info {
+  padding-left: 100px;
+}
+
+.titlepox {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: lighter !important;
+  padding-bottom: 25px;
+  font-size: 0.8rem;
+}
+.privx-title {
+  padding-top: 25px;
+  font-size: 1.7rem;
+  padding-bottom: 10px;
+}
+
+.vision-change2 {
+  display: flex;
+  position: static;
+  left: 600px;
+  top: -50px;
+  width: 15px;
+  height: 15px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 580px) {
+  .priv-main-par {
+    font-size: 1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .priv-title {
+    padding-top: 25px;
+    font-size: 1.5rem;
+    padding-bottom: 25px;
+  }
+
+  .privacy-main {
+    padding-top: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 50px;
+  }
+}
