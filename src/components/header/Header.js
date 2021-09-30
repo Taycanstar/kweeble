@@ -40,7 +40,7 @@ const Header = (props) => {
     dispatch(fetchData());
     setInterval(() => {
       dispatch(fetchData());
-    }, 1000 * 60) //a sec = 1000, a min = 1000 * 60
+    }, 1000 * 60); //a sec = 1000, a min = 1000 * 60
   }, []);
 
   return (
@@ -55,7 +55,7 @@ const Header = (props) => {
               <ul>
                 <li className="contact-us">
                   <Link to="/contact-us">
-                    <h4>Contact Us</h4>
+                    <h3>Contact Us</h3>
                   </Link>
                 </li>
               </ul>
