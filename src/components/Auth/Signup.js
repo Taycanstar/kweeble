@@ -153,7 +153,7 @@ const Signup = (props) => {
                 Choose here
               </option>
               <option value="Eckerd College">Eckerd College</option>
-              <option value="Polk State College">Polk State College</option>
+              {/* <option value="Polk State College">Polk State College</option> */}
             </select>
           </div>
 
