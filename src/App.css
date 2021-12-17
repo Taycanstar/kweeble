@@ -8,6 +8,10 @@
   outline: none !important;
 }
 
+body {
+  background-color: white;
+}
+
 :root {
   --primary: #0078d7;
 }
