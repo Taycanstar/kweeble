@@ -206,7 +206,7 @@
     margin-bottom: 5px;
   }
   .signup-btn {
-    padding: 16px 25px;
+    padding: 16px 18px;
     background-color: #0078d7;
     color: #fff;
     font-size: 1rem;
@@ -258,7 +258,7 @@
   }
   .main-title h1 {
   font-size: 40px;
-  line-height: 150%;
+  line-height: 80%;
 }
  .value-prop {
   display: flex;
