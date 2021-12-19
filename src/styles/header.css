@@ -186,6 +186,29 @@ header .dropdown-toggle {
     background-color: #fff !important;
   }
 
+  header {
+    height: 50px;
+    /* border-bottom: 1px solid lightgray; */
+    top: 0;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    position: fixed;
+    background-color: white;
+  }
+
+  .brand img {
+    width: 150px;
+    top: 20px;
+  }
+  header .inner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0;
+    
+  }
+
   .brand {
     margin-bottom: 20px;
     padding-top: 10px;
