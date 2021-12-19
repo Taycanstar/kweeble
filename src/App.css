@@ -9,15 +9,6 @@
   background-color: white;
 }
 
-body {
-  background-color: white !important;
-}
-
-html {
-  
-  background-color: white !important;
-
-}
 
 :root {
   --primary: #0078d7;
