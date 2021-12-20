@@ -196,6 +196,9 @@ header .dropdown-toggle {
     position: fixed;
     background-color: white;
   }
+  header .container {
+    height: 50px;
+  }
 
   .brand img {
     width: 150px;
