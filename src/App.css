@@ -6,9 +6,12 @@
   font-family: "Maven Pro", sans-serif !important;
   box-sizing: border-box;
   outline: none !important;
-  background-color: white;
+
 }
 
+a:hover {
+  text-decoration:none !important;
+}
 
 :root {
   --primary: #0078d7;
