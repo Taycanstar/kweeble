@@ -186,8 +186,13 @@ header .dropdown-toggle {
     background-color: #fff !important;
   }
 
+  .brand img {
+    width: 150px;
+    top: 20px;
+  }
+
   header {
-    height: 40px;
+    height: 45px;
     /* border-bottom: 1px solid lightgray; */
     top: 0;
     width: 100%;
@@ -196,14 +201,7 @@ header .dropdown-toggle {
     position: fixed;
     background-color: white;
   }
-  header .container {
-    height: 50px;
-  }
 
-  .brand img {
-    width: 150px;
-    top: 20px;
-  }
   header .inner-content {
     display: flex;
     justify-content: space-between;
@@ -223,3 +221,4 @@ header .dropdown-toggle {
     display: none;
   }
 }
+
