@@ -182,7 +182,7 @@
 @media (max-width: 580px) {
 
   .home-content {
-  padding-top: 50px;
+  padding-top: 50px !important;
   padding-left: 40px;
   padding-right: 40px;
   width: 100%;
