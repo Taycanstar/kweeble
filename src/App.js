@@ -22,6 +22,7 @@ import Forgot from "./components/Auth/Forgot";
 import Reset from "./components/Auth/Reset";
 import { ProtectedRoute } from "./components/Auth/ProtectedRoute";
 import NotFound from "./components/Auth/NotFound";
+import Profile from "./components/Profile/actualProfile/Profile";
 // import store from "./store";
 
 function App() {
@@ -33,7 +34,8 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/register" component={Signup} />
           <Route path="/Login" component={Login} />
-          <ProtectedRoute path="/profile" component={EditProfile} />
+          <ProtectedRoute path="/edit-profile" component={EditProfile} />
+          <ProtectedRoute path="/profile" component={Profile} />
           <ProtectedRoute path="/settings" component={Settings} />
           <ProtectedRoute path="/account" component={Account} />
           <ProtectedRoute path="/account-info" component={AccountInfo} />

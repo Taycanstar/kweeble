@@ -221,5 +221,8 @@ header .dropdown-toggle {
   .contact-us {
     display: none;
   }
+  .drop-label{
+    font-size: .95rem;
+  }
 }
 

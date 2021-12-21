@@ -86,7 +86,7 @@ const Header = (props) => {
                         <Link to="/profile">
                           <div className="drop-item">
                             <PersonIcon />
-                            <h4 className="drop-label">Edit Profile</h4>
+                            <h4 className="drop-label">View my profile</h4>
                           </div>
                         </Link>
                       </Dropdown.Item>

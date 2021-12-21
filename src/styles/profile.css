@@ -199,3 +199,98 @@ body {
     padding-right: 150px;
   }
 } */
+
+@media (max-width: 580px){
+  .profile-header {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+  .profile-name{
+    padding-top:10px;
+    padding-bottom: 5px;
+    font-size: .95rem;
+  }
+
+  .profile-username {
+    padding-bottom: 8px;
+    font-size: .8rem;
+  }
+
+  .personal-stats {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .single-stat{
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left:10px;
+  }
+
+  .number-of-following{
+    font-size: 0.95rem;
+    font-weight: bold;
+  }
+
+  .number-of-followers{
+    font-size: 0.95rem;
+    font-weight: bold;
+  }
+
+  .following-text {
+    font-size: 0.7rem;
+    color: rgb(94, 94, 94);
+  }
+
+  .followers-text {
+    font-size: 0.7rem;
+    color: rgb(94, 94, 94);
+  }
+
+  .edit-pro-btn{
+    border-radius: 1px;
+    padding: 5px 18px;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    
+  }
+
+  .profile-main{
+    border-top: 1px solid rgb(230, 230, 230);
+    border-bottom: 1px solid rgb(230, 230, 230);
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+  }
+
+  .profile-bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 5px;
+  }
+
+  .single-bar-icon {
+    color: gray;
+    /* padding-right: 15px;
+    padding-left: 15px; */
+    cursor: pointer;
+  }
+
+  .single-bar-icon:hover{
+    color: black;
+  }
+
+
+
+
+}
