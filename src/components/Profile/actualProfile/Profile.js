@@ -5,10 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import AssignmentIndOutlinedIcon from "@mui/icons-material/AssignmentIndOutlined";
 import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
+import PostReel from "./PostReel";
+import UserInfo from "./UserInfo";
 
 const Profile = () => {
   const data = useSelector((state) => state.auth.authData);
   const [user, setUser] = useState(localStorage.getItem("token"));
+  const [userInfo, setUserInfo] = useState(true);
+  const [postReel, setPostReel] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -18,6 +22,16 @@ const Profile = () => {
       dispatch(fetchData());
     }, 1000 * 60); //a sec = 1000, a min = 1000 * 60
   }, []);
+
+  const displayUserInfo = () => {
+    setUserInfo(true);
+    setPostReel(false);
+  };
+
+  const displayPostReel = () => {
+    setPostReel(true);
+    setUserInfo(false);
+  };
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -62,15 +76,16 @@ const Profile = () => {
       </div>
       <div className="profile-main">
         <div className="profile-bar">
-          <div className="single-bar-icon">
-            <AssignmentIndOutlinedIcon />
+          <div className={userInfo ? "selected-bar-icon" : "single-bar-icon"}>
+            <AssignmentIndOutlinedIcon onClick={displayUserInfo} />
           </div>
 
-          <div className="single-bar-icon">
-            <FeedOutlinedIcon />
+          <div className={postReel ? "selected-bar-icon" : "single-bar-icon"}>
+            <FeedOutlinedIcon onClick={displayPostReel} />
           </div>
         </div>
       </div>
+      {userInfo ? <UserInfo /> : <PostReel />}
     </div>
   );
 };

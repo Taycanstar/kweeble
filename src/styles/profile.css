@@ -290,6 +290,105 @@ body {
     color: black;
   }
 
+  .selected-bar-icon {
+    color: #0078d7;
+    /* padding-right: 15px;
+    padding-left: 15px; */
+    cursor: pointer;
+  }
+
+  .single-bar-icon:hover{
+    color: black;
+  }
+
+  .user-info-main {
+    display: flex;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    flex-direction: column;
+  }
+
+  .user-first-row {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .personal {
+    background-color: #f1f1f1;
+    flex:0.5;
+    margin-right: 10px;
+    padding-top:5px;
+    padding-left: 5px;
+    border-left: 3px solid #0078d7;
+    border-radius: 3px;
+    padding-bottom: 5px;
+
+  }
+
+  .personal h5 {
+    font-size: 1rem;
+    padding-bottom: 5px;
+  }
+
+  .personal p {
+    font-size: 0.8rem;
+    padding-bottom: 2px;
+  }
+
+  
+  .social {
+    background-color: #f1f1f1;
+    flex: 0.5;
+    
+    padding-top:5px;
+    padding-left: 5px;
+    border-left: 3px solid #E40166;
+    border-radius: 3px;
+    padding-bottom: 5px;
+
+  }
+
+  .social h5 {
+    font-size: 1rem;
+    padding-bottom: 5px;
+  }
+
+  .social p {
+    font-size: 0.8rem;
+    padding-bottom: 2px;
+  }
+
+  .user-second-row{
+    display: flex;
+    margin-bottom: 10px;
+    
+  }
+  .user-interests{
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+; color: white;
+    flex: 1;
+    min-height: 80px;
+    padding-top:5px;
+    padding-left: 5px;
+    /* border-left: 3px solid #F3ED2f ; */
+    border-radius: 3px;
+    padding-bottom: 5px;
+    
+  }
+
+   .user-interests h5 {
+    font-size: 1rem;
+    padding-bottom: 5px;
+  }
+
+  .user-interests p {
+    font-size: 0.8rem;
+    padding-bottom: 2px;
+  }
+
+
 
 
 
