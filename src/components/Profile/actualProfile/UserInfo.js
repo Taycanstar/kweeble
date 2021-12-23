@@ -21,7 +21,10 @@ const UserInfo = () => {
           <h5>Personal</h5>
           <p>{data?.email}</p>
           <p>{data?.phoneNumber}</p>
+          <p>Male2</p>
+          <p>August 6 1999</p>
         </div>
+
         <div className="social">
           <h5>Social</h5>
           <p>
@@ -36,6 +39,30 @@ const UserInfo = () => {
         <div className="user-interests">
           <h5>Interests</h5>
           <p>{data?.interests}</p>
+        </div>
+      </div>
+      <div className="user-third-row">
+        <div className="studies">
+          <h5>Studies</h5>
+          <p>{data?.college} 25'</p>
+          <p>Bachelor of Science1</p>
+          <p>{data?.major}</p>
+        </div>
+        <div className="current-classes">
+          <h5>Current classes</h5>
+          <p>class 1</p>
+          <p>class 2</p>
+          <p>class 3</p>
+          <p>class 4</p>
+        </div>
+      </div>
+      <div className="user-fourth-row">
+        <div className="tbd">
+          <h5>Attributes</h5>
+          <p>tbd</p>
+          <p>tbd</p>
+          <p>tbd</p>
+          <p>tbd</p>
         </div>
       </div>
     </div>

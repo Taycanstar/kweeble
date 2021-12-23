@@ -26,6 +26,10 @@ body {
   margin-bottom: 15px;
 }
 
+.profile-container {
+  padding-bottom: 25px;
+}
+
 .edit-avatar {
   display: flex;
   flex-direction: column;
@@ -286,10 +290,6 @@ body {
     cursor: pointer;
   }
 
-  .single-bar-icon:hover{
-    color: black;
-  }
-
   .selected-bar-icon {
     color: #0078d7;
     /* padding-right: 15px;
@@ -316,20 +316,20 @@ body {
   }
 
   .personal {
-    background-color: #f1f1f1;
+    background-color: var(--secondary);
     flex:0.5;
     margin-right: 10px;
-    padding-top:5px;
-    padding-left: 5px;
-    border-left: 3px solid #0078d7;
+    padding: 10px;
+    /* border-left: 3px solid #0078d7; */
     border-radius: 3px;
-    padding-bottom: 5px;
+    
 
   }
 
   .personal h5 {
     font-size: 1rem;
     padding-bottom: 5px;
+    color: #0078d7;
   }
 
   .personal p {
@@ -339,20 +339,20 @@ body {
 
   
   .social {
-    background-color: #f1f1f1;
+    background-color: var(--secondary);
     flex: 0.5;
     
-    padding-top:5px;
-    padding-left: 5px;
-    border-left: 3px solid #E40166;
+   padding: 10px;
+    /* border-left: 3px solid #E40166; */
     border-radius: 3px;
-    padding-bottom: 5px;
+    
 
   }
 
   .social h5 {
     font-size: 1rem;
     padding-bottom: 5px;
+    color: #E40166;
   }
 
   .social p {
@@ -366,15 +366,14 @@ body {
     
   }
   .user-interests{
-    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
-; color: white;
+  background-image: linear-gradient(to right top, #00c6ff, #00b4ff, #00a1ff, #008bff, #0072ff);
     flex: 1;
     min-height: 80px;
-    padding-top:5px;
-    padding-left: 5px;
+    padding: 10px;
     /* border-left: 3px solid #F3ED2f ; */
     border-radius: 3px;
-    padding-bottom: 5px;
+    
+    color: white;
     
   }
 
@@ -386,6 +385,73 @@ body {
   .user-interests p {
     font-size: 0.8rem;
     padding-bottom: 2px;
+  }
+
+  .user-third-row{
+    display: flex;
+    margin-bottom: 10px;
+    
+  }
+
+  .studies {
+    background-color: var(--secondary);
+    flex:0.5;
+    margin-right: 10px;
+    padding: 10px;
+    
+    border-radius: 3px;
+    
+
+  }
+
+  .studies h5 {
+    font-size: 1rem;
+    padding-bottom: 5px;
+  }
+
+  .studies p {
+    font-size: 0.8rem;
+    padding-bottom: 2px;
+  }
+
+  
+  .current-classes {
+    background-color: var(--secondary);
+    flex: 0.5;
+   padding:10px;
+    border-radius: 3px;
+
+  }
+
+  .current-classes h5 {
+    font-size: 1rem;
+    padding-bottom: 5px;
+  }
+
+  .current-classes p {
+    font-size: 0.8rem;
+    padding-bottom: 2px;
+  }
+
+  .user-fourth-row {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .tbd {
+      background-image: linear-gradient(to left bottom, #f9f871, #ffe469, #ffd166, #ffbe66, #ffac69, #ffa16c, #ff9670, #ff8c76, #ff847b, #ff7d81, #ff7689, #ff6f91);
+; color: white;
+    flex: 1;
+    min-height: 80px;
+    padding:10px;
+    /* border-left: 3px solid #F3ED2f ; */
+    border-radius: 3px;
+    
+  }
+
+  .tbd h5 {
+    font-size: 1rem;
+    padding-bottom: 5px;
   }
 
 
