@@ -58,7 +58,7 @@ const UserInfo = () => {
       </div>
       <div className="user-fourth-row">
         <div className="tbd">
-          <h5>Attributes</h5>
+          <h5>Top Artists</h5>
           <p>tbd</p>
           <p>tbd</p>
           <p>tbd</p>

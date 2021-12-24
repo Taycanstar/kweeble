@@ -434,14 +434,14 @@ body {
   }
 
   .user-fourth-row {
-    display: flex;
+    /* display: flex; */
     margin-bottom: 10px;
   }
 
-  .tbd {
+  .user-fourth-row  {
       background-image: linear-gradient(to left bottom, #f9f871, #ffe469, #ffd166, #ffbe66, #ffac69, #ffa16c, #ff9670, #ff8c76, #ff847b, #ff7d81, #ff7689, #ff6f91);
 ; color: white;
-    flex: 1;
+    /* flex: 1; */
     min-height: 80px;
     padding:10px;
     /* border-left: 3px solid #F3ED2f ; */
@@ -449,13 +449,10 @@ body {
     
   }
 
-  .tbd h5 {
+  .user-fourth-row h5 {
     font-size: 1rem;
     padding-bottom: 5px;
   }
-
-
-
 
 
 }
