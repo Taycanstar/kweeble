@@ -44,25 +44,26 @@ const UserInfo = () => {
       <div className="user-third-row">
         <div className="studies">
           <h5>Studies</h5>
-          <p>{data?.college} 25'</p>
-          <p>Bachelor of Science1</p>
+          <p>{data?.college} </p>
+          <p>{data?.typeOfDegree}</p>
           <p>{data?.major}</p>
         </div>
         <div className="current-classes">
           <h5>Current classes</h5>
-          <p>class 1</p>
-          <p>class 2</p>
-          <p>class 3</p>
-          <p>class 4</p>
+          <p>{data?.class1}</p>
+          <p>{data?.class2}</p>
+          <p>{data?.class3}</p>
+          <p>{data?.class4}</p>
         </div>
       </div>
       <div className="user-fourth-row">
         <div className="tbd">
-          <h5>Top Artists</h5>
-          <p>tbd</p>
-          <p>tbd</p>
-          <p>tbd</p>
-          <p>tbd</p>
+          <h5>{data?.top1}</h5>
+          <p>{data?.top1A1}</p>
+          <p>{data?.top1A2}</p>
+          <p>{data?.top1A3}</p>
+          <p>{data?.top1A4}</p>
+          <p>{data?.top1A5}</p>
         </div>
       </div>
     </div>
