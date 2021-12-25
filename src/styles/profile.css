@@ -10,7 +10,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  width: 100%;
+  /* justify-content: center; */
 }
 .edit-image2 {
   display: none;
@@ -42,7 +43,9 @@ body {
   padding-top: 10px;
   border-radius: 4px;
   /* box-shadow: rgb(0 0 0 / 6%) 0px 2px 8px; */
-  padding: 22px 40px;
+  /* padding: 22px 40px; */
+  padding-top: 22px;
+  padding-bottom: 22px;
   padding-left: 65px;
 }
 
@@ -59,8 +62,8 @@ body {
   border: none;
   /* border-bottom: lightgray solid 1px; */
 
-  width: 90%;
-  margin-bottom: 10px;
+  width: 350px;
+  /* margin-bottom: 2px; */
   font-size: 1rem;
   padding-bottom: 8px;
   padding-top: 25px;
@@ -92,7 +95,7 @@ body {
 .save-btn {
   margin-top: 20px;
   padding: 15px;
-  width: 90%;
+  width: 350px;
   color: white;
   background-color: #0078d7;
   border: none;
@@ -120,6 +123,7 @@ body {
 
 .top-main-part {
   display: flex;
+  
 }
 
 .right-title {
@@ -173,27 +177,32 @@ body {
   }
 }
 
-@media (max-width: 637px) {
+@media (max-width: 580px) {
   .right-title {
     display: none;
   }
 
   .profile-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     padding-left: 0px;
     padding-right: 0px;
+    width: 100%;
   }
   .profile-card {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
   }
   .main-edit-profile {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
+  }
+
+  .profile-card {
+    width: 100%;
   }
 }
 
