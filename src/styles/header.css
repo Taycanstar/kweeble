@@ -224,5 +224,8 @@ header .dropdown-toggle {
   .drop-label{
     font-size: .95rem;
   }
+   .drop-data {
+    padding-top: 10px;
+  }
 }
 
