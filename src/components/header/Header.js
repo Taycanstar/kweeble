@@ -51,7 +51,7 @@ const Header = (props) => {
             <div className="brand" onClick={refresh}>
               <img src={logo} alt="logo" />
             </div>
-            <div className="header-icons">
+            {/* <div className="header-icons">
               <ul>
                 <li className="contact-us">
                   <Link to="/contact-us">
@@ -59,7 +59,7 @@ const Header = (props) => {
                   </Link>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
           <div className="user-content">
             <ul>

@@ -21,8 +21,8 @@ const UserInfo = () => {
           <h5>Personal</h5>
           <p>{data?.email}</p>
           <p>{data?.phoneNumber}</p>
-          <p>Male2</p>
-          <p>August 6 1999</p>
+          <p>{data?.gender}</p>
+          <p>{data?.birthMonth} {data?.birthDay} {data?.birthYear}</p>
         </div>
 
         <div className="social">

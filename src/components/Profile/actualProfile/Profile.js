@@ -57,18 +57,18 @@ const Profile = () => {
       <div className="profile-header">
         <Avatar src={data?.photo || "default.png"} className={classes.large} />
         <h5 className="profile-name">{data?.name}</h5>
-        <h6 className="profile-username">@dimerson</h6>
+        {/* <h6 className="profile-username">@{data?.username}</h6> */}
 
-        <div className="personal-stats">
+        {/* <div className="personal-stats">
           <div className="single-stat">
             <p className="number-of-following">752</p>
             <p className="following-text">Following</p>
           </div>
           <div className="single-stat">
-            <p className="number-of-followers">13M</p>
+            <p className="number-of-followers">13</p>
             <p className="followers-text">Followers</p>
           </div>
-        </div>
+        </div> */}
 
         <a href="/edit-profile">
           <button className="edit-pro-btn">Edit profile</button>
@@ -80,9 +80,9 @@ const Profile = () => {
             <AssignmentIndOutlinedIcon onClick={displayUserInfo} />
           </div>
 
-          <div className={postReel ? "selected-bar-icon" : "single-bar-icon"}>
+          {/* <div className={postReel ? "selected-bar-icon" : "single-bar-icon"}>
             <FeedOutlinedIcon onClick={displayPostReel} />
-          </div>
+          </div> */}
         </div>
       </div>
       {userInfo ? <UserInfo /> : <PostReel />}
