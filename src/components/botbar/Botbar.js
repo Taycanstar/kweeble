@@ -7,6 +7,7 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import AddIcon from "@mui/icons-material/Add";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import ViewListRoundedIcon from "@mui/icons-material/ViewListRounded";
 
 const Botbar = () => {
   return (
@@ -15,8 +16,13 @@ const Botbar = () => {
         <div className="container">
           <div className="bot-inner-content">
             <div className="bot-icons">
-              <Link to="/news">
+              <Link to="/">
                 <HomeRoundedIcon />
+              </Link>
+            </div>
+            <div className="bot-icons">
+              <Link to="/">
+                <ViewListRoundedIcon />
               </Link>
             </div>
             {/* <div className="bot-icons">

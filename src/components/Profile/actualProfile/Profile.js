@@ -8,11 +8,15 @@ import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
 import PostReel from "./PostReel";
 import UserInfo from "./UserInfo";
 
+
 const Profile = () => {
   const data = useSelector((state) => state.auth.authData);
   const [user, setUser] = useState(localStorage.getItem("token"));
   const [userInfo, setUserInfo] = useState(true);
   const [postReel, setPostReel] = useState(false);
+  
+
+   
 
   const dispatch = useDispatch();
 
@@ -57,7 +61,7 @@ const Profile = () => {
       <div className="profile-header">
         <Avatar src={data?.photo || "default.png"} className={classes.large} />
         <h5 className="profile-name">{data?.name}</h5>
-        {/* <h6 className="profile-username">@{data?.username}</h6> */}
+        <h6 className="profile-username">@{data?.username}</h6>
 
         {/* <div className="personal-stats">
           <div className="single-stat">
@@ -69,10 +73,14 @@ const Profile = () => {
             <p className="followers-text">Followers</p>
           </div>
         </div> */}
-
-        <a href="/edit-profile">
-          <button className="edit-pro-btn">Edit profile</button>
-        </a>
+        <div className="edit-panel">
+          <a class="button-for-edit" href="/edit-profile">
+            <button className="edit-pro-btn">Edit profile</button>
+          </a>
+          <a class="button-for-edit" href="/courses">
+            <button className="edit-pro-btn">Edit classes</button>
+          </a>
+        </div>
       </div>
       <div className="profile-main">
         <div className="profile-bar">

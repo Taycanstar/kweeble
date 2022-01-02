@@ -13,10 +13,11 @@ const Signup = (props) => {
     name: "",
     email: "",
     password: "",
+    username: "",
     error: null,
   });
 
-  const { error, name, email, password } = data;
+  const { error, name, email, password, username } = data;
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -36,7 +37,7 @@ const Signup = (props) => {
     
       await axios.post(
         "/auth/register",
-        { name, email, password, college, gender, birthDay, birthMonth, birthYear},
+        { name, email, password, college, gender, birthDay, birthMonth, birthYear, username},
         {
           headers: {
             "Content-Type": "application/json",
@@ -110,6 +111,15 @@ const Signup = (props) => {
             onChange={handleChange}
             value={email}
           />
+
+          <input
+            className="signup-input"
+            type="text"
+            name="username"
+            placeholder="Username"
+            onChange={handleChange}
+            value={username}
+          />
           {/* <div className="password-input"> */}
           <input
             className="signup-input"
@@ -160,6 +170,9 @@ const Signup = (props) => {
                 id="birth_day"
                 onChange={(e) => setBirthDay(e.target.value)}
               >
+                <option value="" selected disabled hidden>
+                  Day
+                </option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -198,6 +211,9 @@ const Signup = (props) => {
                 id="birth_month"
                 onChange={(e) => setBirthMonth(e.target.value)}
               >
+                <option value="" selected disabled hidden>
+                  Month
+                </option>
                 <option value="January">Jan</option>
                 <option value="February">Feb</option>
                 <option value="March">Mar</option>
@@ -217,9 +233,10 @@ const Signup = (props) => {
                 id="birth_year"
                 onChange={(e) => setBirthYear(e.target.value)}
               >
-                <option value="2021" selected="1">
-                  2021
+                <option value="" selected disabled hidden>
+                  Year
                 </option>
+                <option value="2021">2021</option>
                 <option value="2020">2020</option>
                 <option value="2019">2019</option>
                 <option value="2018">2018</option>

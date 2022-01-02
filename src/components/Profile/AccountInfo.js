@@ -15,6 +15,7 @@ const AccountInfo = () => {
     major: "",
     interests: "",
     email: "",
+    username: "",
   });
 
   useEffect(() => {
@@ -49,6 +50,17 @@ const AccountInfo = () => {
             <div className="acc-info-main">
               <h5 className="acc-options">Email</h5>
               <h5 className="acc-mid-label">{data.email}</h5>
+            </div>
+            <div className="arrow-fow">
+              <ArrowForwardIosOutlinedIcon />
+            </div>
+          </div>
+        </Link>
+        <Link to="/change-username">
+          <div className="acc-info-opt">
+            <div className="acc-info-main">
+              <h5 className="acc-options">Username</h5>
+              <h5 className="acc-mid-label">@{data.username}</h5>
             </div>
             <div className="arrow-fow">
               <ArrowForwardIosOutlinedIcon />

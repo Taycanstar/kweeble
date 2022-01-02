@@ -7,6 +7,7 @@ import image from "../../images/q9.webp";
 import image2 from "../../images/k4.webp";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
+import Course from "../classes/Course";
 
 const EditProfile = () => {
   const authData = useSelector((state) => state.auth.authData);
@@ -26,17 +27,7 @@ const EditProfile = () => {
     snapchat: "",
     instagram: "",
     typeOfDegree: "",
-    class1: "",
-    class2: "",
-    class3: "",
-    class4: "",
-    class5: "",
-    top1: "",
-    top1A1: "",
-    top1A2: "",
-    top1A3: "",
-    top1A4: "",
-    top1A5: "",
+  
   });
 
   useEffect(() => {
@@ -68,17 +59,7 @@ const EditProfile = () => {
           instagram: data.instagram,
           snapchat: data.snapchat,
           typeOfDegree: data.typeOfDegree,
-          class1: data.class1,
-          class2: data.class2,
-          class3: data.class3,
-          class4: data.class4,
-          class5: data.class5,
-          top1: data.top1,
-          top1A1: data.top1A1,
-          top1A2: data.top1A2,
-          top1A3: data.top1A3,
-          top1A4: data.top1A4,
-          top1A5: data.top1A5,
+          
         })
       );
 
@@ -211,6 +192,7 @@ const EditProfile = () => {
                   className="edit-input"
                   type="text"
                 />
+                
                 <h3 className="top-label">Type of Degree</h3>
                 <input
                   name="typeOfDegree"
@@ -221,98 +203,7 @@ const EditProfile = () => {
                   className="edit-input"
                   type="text"
                 />
-                <h3 className="top-label">Current class 1</h3>
-                <input
-                  name="class1"
-                  value={data.class1}
-                  onChange={(e) => setData({ ...data, class1: e.target.value })}
-                  className="edit-input"
-                  type="text"
-                />
-                <h3 className="top-label">Current class 2</h3>
-                <input
-                  name="class2"
-                  value={data.class2}
-                  onChange={(e) => setData({ ...data, class2: e.target.value })}
-                  className="edit-input"
-                  type="text"
-                />
-                <h3 className="top-label">Current class 3</h3>
-                <input
-                  name="class3"
-                  value={data.class3}
-                  onChange={(e) => setData({ ...data, class3: e.target.value })}
-                  className="edit-input"
-                  type="text"
-                />
-                <h3 className="top-label">Current class 4</h3>
-                <input
-                  name="class4"
-                  value={data.class4}
-                  onChange={(e) => setData({ ...data, class4: e.target.value })}
-                  className="edit-input"
-                  type="text"
-                />
-                <h3 className="top-label">Current class 5</h3>
-                <input
-                  name="class5"
-                  value={data.class5}
-                  onChange={(e) => setData({ ...data, class5: e.target.value })}
-                  className="edit-input"
-                  type="text"
-                />
-                <h3 className="top-label">
-                  Custom Top list (Top Artists, songs, movies, etc...
-                </h3>
-                <input
-                  name="top1"
-                  value={data.top1}
-                  onChange={(e) => setData({ ...data, top1: e.target.value })}
-                  className="edit-input"
-                  type="text"
-                />
-                <h3 className="top-label">Top choice 1</h3>
-                <input
-                  name="top1A1"
-                  value={data.top1A1}
-                  onChange={(e) =>
-                    setData({ ...data, topChoice1: e.target.value })
-                  }
-                  className="edit-input"
-                  type="text"
-                />
-                <h3 className="top-label">Top choice 2</h3>
-                <input
-                  name="top1A2"
-                  value={data.top1A2}
-                  onChange={(e) => setData({ ...data, top1A2: e.target.value })}
-                  className="edit-input"
-                  type="text"
-                />
-                <h3 className="top-label">Top choice 3</h3>
-                <input
-                  name="top1A3"
-                  value={data.top1A3}
-                  onChange={(e) => setData({ ...data, top1A3: e.target.value })}
-                  className="edit-input"
-                  type="text"
-                />
-                <h3 className="top-label">Top choice 4</h3>
-                <input
-                  name="top1A4"
-                  value={data.top1A4}
-                  onChange={(e) => setData({ ...data, top1A4: e.target.value })}
-                  className="edit-input"
-                  type="text"
-                />
-                <h3 className="top-label">Top choice 5</h3>
-                <input
-                  name="top1A5"
-                  value={data.top1A5}
-                  onChange={(e) => setData({ ...data, top1A5: e.target.value })}
-                  className="edit-input"
-                  type="text"
-                />
+               
 
                 {(() => {
                   switch (isError) {

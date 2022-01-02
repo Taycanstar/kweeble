@@ -1,24 +1,12 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import "../../styles/home.css";
 import ResultCard from "./ResultCard";
+
 
 const MainText = () => {
   const [user, setUser] = useState(localStorage.getItem("token"));
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-
-  //   const getUser = async () => {
-  //     const res = await axios.get("/auth", {
-  //       headers: {
-  //         Authorization: `Bearer ${localStorage.getItem("token")}`,
-  //       },
-  //     });
-  //     setUser(res.data);
-  //   };
-
-  //   useEffect(() => {
-  //     getUser();
-  //   }, []);
 
   const onChange = (e) => {
     e.preventDefault();
@@ -36,8 +24,11 @@ const MainText = () => {
         console.log(data);
       });
   };
+  
 
   const [college, setCollege] = useState([]);
+
+  
 
   return (
     <>
@@ -86,9 +77,9 @@ const MainText = () => {
                 Choose here
               </option>
               <option value="Eckerd College">Eckerd College</option>
-              {/* <option value="Polk State College">Polk State College</option> */}
+               {/* <option value="Polk State College">Polk State College</option> */}
             </select>
-          </div>
+          </div> 
 
           {results.length > 0 && (
             <ul className="results">

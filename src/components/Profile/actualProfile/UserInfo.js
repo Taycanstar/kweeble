@@ -1,10 +1,13 @@
 import { fetchData } from "../../../actions/auth";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "../../../api/index";
+import { getCourses } from "../../services/classServices";
 
 const UserInfo = () => {
   const data = useSelector((state) => state.auth.authData);
   const [user, setUser] = useState(localStorage.getItem("token"));
+  const [courses, setCourses] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -14,6 +17,19 @@ const UserInfo = () => {
       dispatch(fetchData());
     }, 1000 * 60); //a sec = 1000, a min = 1000 * 60
   }, []);
+
+    useEffect(() => {
+      async function fetchCourses() {
+        const res = await axios.get("auth/courses");
+        
+        setCourses(res.data)
+        
+        return res;
+      }
+      fetchCourses();
+    }, []);
+
+
   return (
     <div className="user-info-main">
       <div className="user-first-row">
@@ -22,7 +38,9 @@ const UserInfo = () => {
           <p>{data?.email}</p>
           <p>{data?.phoneNumber}</p>
           <p>{data?.gender}</p>
-          <p>{data?.birthMonth} {data?.birthDay} {data?.birthYear}</p>
+          <p>
+            {data?.birthMonth} {data?.birthDay} {data?.birthYear}
+          </p>
         </div>
 
         <div className="social">
@@ -50,22 +68,17 @@ const UserInfo = () => {
         </div>
         <div className="current-classes">
           <h5>Current classes</h5>
-          <p>{data?.class1}</p>
-          <p>{data?.class2}</p>
-          <p>{data?.class3}</p>
-          <p>{data?.class4}</p>
+          <div>
+            {courses.map((course) => (
+              <div key={course._id} >
+               <p>{course.course}</p>
+                
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      <div className="user-fourth-row">
-        <div className="tbd">
-          <h5>{data?.top1}</h5>
-          <p>{data?.top1A1}</p>
-          <p>{data?.top1A2}</p>
-          <p>{data?.top1A3}</p>
-          <p>{data?.top1A4}</p>
-          <p>{data?.top1A5}</p>
-        </div>
-      </div>
+      
     </div>
   );
 };

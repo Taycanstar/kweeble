@@ -23,6 +23,9 @@ import Reset from "./components/Auth/Reset";
 import { ProtectedRoute } from "./components/Auth/ProtectedRoute";
 import NotFound from "./components/Auth/NotFound";
 import Profile from "./components/Profile/actualProfile/Profile";
+import EditUsername from "./components/Profile/EditUsername";
+import Botbar from "./components/botbar/Botbar";
+import Course from "./components/classes/Course";
 // import store from "./store";
 
 function App() {
@@ -44,6 +47,8 @@ function App() {
             component={PasswordVerification}
           />
           <ProtectedRoute path="/change-email" component={EditEmail} />
+          <ProtectedRoute path="/courses" component={Course} />
+          <ProtectedRoute path="/change-username" component={EditUsername} />
           <ProtectedRoute path="/change-password" component={ChangePassword} />
           <ProtectedRoute
             path="/verify-password2"
@@ -65,6 +70,7 @@ function App() {
           <Route path="/reset-password" component={Reset} />
           <Route path="*" component={NotFound} />
         </Switch>
+        
       </Router>
     </div>
   );

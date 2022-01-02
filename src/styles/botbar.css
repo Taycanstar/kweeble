@@ -1,0 +1,44 @@
+
+@media only screen and (min-width: 581px) {
+  .bot-bar {
+  display: none;
+}
+}
+
+@media (max-width:580px){
+.bot-bar {
+  background-color: #fff;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid rgb(230, 230, 230);
+  z-index: 99;
+ 
+}
+
+.bot-inner-content {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 5px;
+    width: 100%;
+    padding-left:15px;
+    padding-right: 15px;
+    padding-top:3px;
+    
+}
+
+.bot-icons {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.bot-icons a:hover {
+  color: #0078d7;
+}
+
+.bot-icons a {
+  color: black;
+}
+}
