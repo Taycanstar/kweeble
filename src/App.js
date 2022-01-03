@@ -26,6 +26,7 @@ import Profile from "./components/Profile/actualProfile/Profile";
 import EditUsername from "./components/Profile/EditUsername";
 import Botbar from "./components/botbar/Botbar";
 import Course from "./components/classes/Course";
+import SingleProfile from './components/SingleProfile/SingleProfile'
 // import store from "./store";
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <ProtectedRoute path="/settings" component={Settings} />
           <ProtectedRoute path="/account" component={Account} />
           <ProtectedRoute path="/account-info" component={AccountInfo} />
+          <ProtectedRoute path="/:id" component={SingleProfile} />
           <ProtectedRoute
             path="/verify-password"
             component={PasswordVerification}
@@ -69,6 +71,7 @@ function App() {
           <Route path="/forgot-password" component={Forgot} />
           <Route path="/reset-password" component={Reset} />
           <Route path="*" component={NotFound} />
+        
         </Switch>
         
       </Router>

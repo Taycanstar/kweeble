@@ -18,6 +18,7 @@ import { fetchData } from "../../actions/auth";
 
 const Header = (props) => {
   const data = useSelector((state) => state.auth.authData);
+
   const historyOP = createBrowserHistory({ forceRefresh: true });
   const history = useHistory();
   const dispatch = useDispatch();

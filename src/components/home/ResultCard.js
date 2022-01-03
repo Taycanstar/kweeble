@@ -3,6 +3,7 @@ import { Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import ig from "../../images/igg.png";
 import snap from "../../images/sn.png";
+import {Link} from 'react-router-dom';
 // import twitter from "../../images/tw.png";
 
 const ResultCard = ({ person }) => {
@@ -27,6 +28,8 @@ const ResultCard = ({ person }) => {
 
   const [isMedia, setIsMedia] = useState("");
 
+  console.log(person, "person")
+
   useEffect(() => {
     if (person.snapchat === undefined && person.instagram === undefined) {
       setIsMedia("");
@@ -50,7 +53,7 @@ const ResultCard = ({ person }) => {
         1. Remove authentication if possible
         2. Send the auth token via a cookie instead of via header so that it gets sent with every browser request
         3. Get the photo via JavaScript/Axios */}
-      <Avatar src={person.photo || "default.png"} className={classes.large} />
+      <Link to={`/${person._id}`}><Avatar src={person.photo || "default.png"} className={classes.large} /></Link>
       <div className="user-info-card">
         <div className="main-name">
           <h2 className="card-display-name">{person.name}</h2>

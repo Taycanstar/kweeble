@@ -9,6 +9,11 @@ const UserInfo = () => {
   const [user, setUser] = useState(localStorage.getItem("token"));
   const [courses, setCourses] = useState([]);
 
+  const userData = JSON.parse(localStorage.getItem("profile"));
+
+  const filteredCourses =
+    courses && courses.filter((course) => course.user === userData._id);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,17 +23,16 @@ const UserInfo = () => {
     }, 1000 * 60); //a sec = 1000, a min = 1000 * 60
   }, []);
 
-    useEffect(() => {
-      async function fetchCourses() {
-        const res = await axios.get("auth/courses");
-        
-        setCourses(res.data)
-        
-        return res;
-      }
-      fetchCourses();
-    }, []);
+  useEffect(() => {
+    async function fetchCourses() {
+      const res = await axios.get("auth/courses");
 
+      setCourses(res.data);
+
+      return res;
+    }
+    fetchCourses();
+  }, []);
 
   return (
     <div className="user-info-main">
@@ -69,16 +73,14 @@ const UserInfo = () => {
         <div className="current-classes">
           <h5>Current classes</h5>
           <div>
-            {courses.map((course) => (
-              <div key={course._id} >
-               <p>{course.course}</p>
-                
+            {filteredCourses.map((course) => (
+              <div key={course._id}>
+                <p>{course.course}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
-      
     </div>
   );
 };

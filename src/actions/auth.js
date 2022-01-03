@@ -1,4 +1,4 @@
-import { AUTH } from "../constants/actionTypes";
+import { AUTH, SINGLE_PROFILE } from "../constants/actionTypes";
 
 import * as api from "../api/index.js";
 
@@ -39,6 +39,17 @@ export const fetchData = () => async (dispatch) => {
       window.location.reload();
     }
   }
+};
+
+export const fetchSingleProfile = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.fetchSingleProfile(id);
+    console.log(data, "single profile")
+    dispatch({ type: SINGLE_PROFILE, data });
+  } catch (error) {
+    console.log("hello error==>>", error.response.data);
+    }
+
 };
 
 export const updateUser = (userData) => async (dispatch) => {
