@@ -53,7 +53,7 @@ const ResultCard = ({ person }) => {
         1. Remove authentication if possible
         2. Send the auth token via a cookie instead of via header so that it gets sent with every browser request
         3. Get the photo via JavaScript/Axios */}
-      <Link to={`/${person._id}`}><Avatar src={person.photo || "default.png"} className={classes.large} /></Link>
+      <Link to={`/profile/${person._id}`}><Avatar src={person.photo || "default.png"} className={classes.large} /></Link>
       <div className="user-info-card">
         <div className="main-name">
           <h2 className="card-display-name">{person.name}</h2>

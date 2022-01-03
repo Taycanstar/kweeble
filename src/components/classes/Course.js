@@ -5,50 +5,42 @@ import { Checkbox, Button } from "@material-ui/core";
 import "../../styles/course.css";
 
 class Course extends Courses {
-    state = { courses: [], currentCourse: "" };
-    render() {
-        const { courses } = this.state;
-        return (
-            <div className="course_app flex">
-                <div className="course-card">
-                    <div className="heading">Classes</div>
-                    <form
-                        onSubmit={this.handleSubmit}
-                        className="flex"
-                        
-                    >
-                        <input
-                            variant="outlined"
-                            size="small"
-                            style={{ width: "80%" }}
-                            value={this.state.currentCourse}
-                            required={true}
-                            onChange={this.handleChange}
-                            placeholder="Add new class"
-                            className="add-class-input"
-                        />
-                        <button
-                            className="add-btn"
-                            color="primary"
-                            variant="outlined"
-                            type="submit"
-                        >
-                            Add
-                        </button>
-                    </form>
-                    <div>
-                        {courses.map((course) => (
-                            <div
-                                key={course._id}
-
-                                className="courses-list"
-                            >
-                                {/* <Checkbox
+  state = { courses: [], currentCourse: "" };
+  render() {
+    const { courses } = this.state;
+    return (
+      <div className="course_app flex">
+        <div className="course-card">
+          <div className="heading">Classes</div>
+          <form onSubmit={this.handleSubmit} className="flex">
+            <input
+              variant="outlined"
+              size="small"
+              style={{ width: "80%" }}
+              value={this.state.currentCourse}
+              required={true}
+              onChange={this.handleChange}
+              placeholder="Add new class"
+              className="add-class-input"
+            />
+            <button
+              className="add-btn"
+              color="primary"
+              variant="outlined"
+              type="submit"
+            >
+              Add
+            </button>
+          </form>
+          <div>
+            {courses.map((course) => (
+              <div key={course._id} className="courses-list">
+                {/* <Checkbox
                                     checked={course.completed}
                                     onClick={() => this.handleUpdate(course._id)}
                                     color="primary"
                                 /> */}
-                                {/* <div
+                {/* <div
                                     className={
                                         course.completed
                                             ? "course line_through"
@@ -57,21 +49,20 @@ class Course extends Courses {
                                 >
                                     {course.course}
                                 </div> */}
-                                <h5 className="single-class">{course.course}</h5>
-                                <button
-                                    onClick={() => this.handleDelete(course._id)}
-                                    
-                                    className="delete-class"
-                                >
-                                    Delete
-                                </button>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        );
-    }
+                <h5 className="single-class">{course.course}</h5>
+                <button
+                  onClick={() => this.handleDelete(course._id)}
+                  className="delete-class"
+                >
+                  Delete
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Course;
