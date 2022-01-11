@@ -1,6 +1,6 @@
 header {
   height: 55px;
-  /* border-bottom: 1px solid lightgray; */
+  border-bottom: 1px solid lightgray;
   top: 0;
   width: 100%;
   top: 0;
@@ -43,7 +43,7 @@ header a:hover {
 
 .brand {
   margin-bottom: 20px;
-  padding-top: 10px;
+  /* padding-top: 10px; */
   padding-left: 40px;
   padding-right: 40px;
 }
@@ -99,10 +99,12 @@ header .MuiAvatar-root {
 }
 
 .btn-success {
-  background-color: black !important;
+  background-color: white !important;
   border: 0 solid black !important;
   display: flex;
-  border-radius: 100px;
+  width: 25px !important;
+  height: 48px;
+  /* border-radius: 100%; */
 }
 
 .btn-primary {
@@ -183,9 +185,7 @@ header .dropdown-toggle {
   .log-nav {
     display: none;
   }
-  .btn-success {
-    background-color: #fff !important;
-  }
+  
 
   .brand img {
     width: 150px;

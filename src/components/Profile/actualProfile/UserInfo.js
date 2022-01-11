@@ -46,6 +46,12 @@ const UserInfo = () => {
             {data?.birthMonth} {data?.birthDay} {data?.birthYear}
           </p>
         </div>
+        <div className="user-second-row">
+          <div className="user-interests">
+            <h5>Interests</h5>
+            <p>{data?.interests}</p>
+          </div>
+        </div>
 
         <div className="social">
           <h5>Social</h5>
@@ -57,12 +63,7 @@ const UserInfo = () => {
           </p>
         </div>
       </div>
-      <div className="user-second-row">
-        <div className="user-interests">
-          <h5>Interests</h5>
-          <p>{data?.interests}</p>
-        </div>
-      </div>
+
       <div className="user-third-row">
         <div className="studies">
           <h5>Studies</h5>

@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component, } from "react";
 import {
   addCourses,
   getCourses,
@@ -35,6 +35,7 @@ class Courses extends Component {
       const courses = originalCourses;
       courses.push(data);
       this.setState({ courses, currentCourse: "" });
+      
     } catch (error) {
       console.log(error);
     }

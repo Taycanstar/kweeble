@@ -65,16 +65,17 @@ const MainText = () => {
             />
           </form>
           <div className="colleges">
-            <label className="college-label" htmlFor="college">
+            {/* <label className="college-label2" htmlFor="college">
               College:
-            </label>
+            </label> */}
             <select
+            className="col-home"
               name="college"
               id="college"
               onChange={(e) => setCollege(e.target.value)}
             >
               <option value="" selected disabled hidden>
-                Choose here
+                Choose College 
               </option>
               <option value="Eckerd College">Eckerd College</option>
                {/* <option value="Polk State College">Polk State College</option> */}

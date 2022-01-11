@@ -69,7 +69,8 @@
 
   /* border-bottom: lightgray solid 1px; */
 
-  width: 350px;
+  width: 80%;
+
   /* margin-bottom: 2px; */
   font-size: 1rem;
   padding-bottom: 8px;
@@ -87,9 +88,9 @@
   border: 1px solid #0078d7;
 }
 
-.courses-list {
+/* .courses-list {
     display: flex;
-}
+} */
 
 .course-card {
     border: 1px solid rgb(207, 217, 222);
@@ -119,4 +120,9 @@ background-color: white;
 border: none ;
 cursor: pointer;
 
+}
+
+.a-class {
+    display: flex;
+    flex-direction: row;
 }

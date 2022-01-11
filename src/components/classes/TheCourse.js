@@ -1,12 +1,13 @@
-import React, {useState} from "react";
-import "../../styles/course.css"
-
+import React, { useState } from "react";
+import "../../styles/course.css";
 
 function SingleCourse({ course, index, removeCourse }) {
   return (
     <div className="a-class">
       <h5 className="single-class">{course.text}</h5>
-      <button className="delete-class"onClick={() => removeCourse(index)}>Delete</button>
+      <button className="delete-class" onClick={() => removeCourse(index)}>
+        Delete
+      </button>
     </div>
   );
 }
@@ -46,18 +47,16 @@ function CourseForm({ addCourse }) {
 function Course() {
   const [courses, setCourses] = useState([]);
 
-    const addCourse = (text) => {
-      const newCourses = [...courses, { text }];
-      setCourses(newCourses);
-    };
+  const addCourse = (text) => {
+    const newCourses = [...courses, { text }];
+    setCourses(newCourses);
+  };
 
-    const removeCourse = (index) => {
-      const newCourses = [...courses];
-      newCourses.splice(index, 1);
-      setCourses(newCourses);
-    };
-
-    
+  const removeCourse = (index) => {
+    const newCourses = [...courses];
+    newCourses.splice(index, 1);
+    setCourses(newCourses);
+  };
 
   return (
     <div className="course_app flex">

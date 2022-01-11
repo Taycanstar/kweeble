@@ -166,6 +166,7 @@ const Signup = (props) => {
           <div className="birthday-wrapper">
             <div className="birthday">
               <select
+              className="signup-select"
                 name="birthDay"
                 id="birth_day"
                 onChange={(e) => setBirthDay(e.target.value)}
@@ -207,6 +208,7 @@ const Signup = (props) => {
               </select>
 
               <select
+              className="signup-select"
                 name="birthMonth"
                 id="birth_month"
                 onChange={(e) => setBirthMonth(e.target.value)}
@@ -229,6 +231,7 @@ const Signup = (props) => {
               </select>
 
               <select
+              className="signup-select"
                 name="birthYear"
                 id="birth_year"
                 onChange={(e) => setBirthYear(e.target.value)}
@@ -359,6 +362,7 @@ const Signup = (props) => {
           </label>
           <div className="gender">
             <select
+            className="signup-select"
               name="gender"
               id="gender"
               onChange={(e) => setGender(e.target.value)}
@@ -377,6 +381,7 @@ const Signup = (props) => {
           </label>
           <div className="colleges">
             <select
+            className="signup-select"
               name="college"
               id="college"
               onChange={(e) => setCollege(e.target.value)}

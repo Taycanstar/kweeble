@@ -18,4 +18,5 @@ export const getLogginUser = (data) => API.get("/auth");
 export const updateUser = (data) => API.put("/auth", data);
 export const fetchSingleProfile = (data) => API.get(`/api/${data}`);
 export const updateUserPhoto = (data) => API.post("/auth/photo", data);
+
 export default API;

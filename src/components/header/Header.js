@@ -68,10 +68,10 @@ const Header = (props) => {
                 <>
                   <Dropdown>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
-                      <div className="drop-data">
+                      {/* <div className="drop-data"> */}
                         <Avatar src={data?.photo || "default.png"} />
-                        <h4 className="log-nav">{data?.name}</h4>
-                      </div>
+                        {/* <h4 className="log-nav">{data?.name}</h4> */}
+                      {/* </div> */}
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>

@@ -287,7 +287,8 @@ select:not(:-internal-list-box) {
     overflow: visible !important;
 }
 
-select {
+
+.signup-select {
     text-rendering: auto;
     color: -internal-light-dark(black, white);
     letter-spacing: normal;
@@ -310,12 +311,13 @@ select {
     border-style: solid;
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
     border-image: initial;
-    border-radius: 0px;
+    border-radius: 4px;
         background-position: right 5px center;
     background-repeat: no-repeat;
     background-size: 14px;
     padding: 0 8px;
     padding-right: 20px;
-    border-radius: 4px;
     height: 36px;
+    font-size: 15px;
 }
+
