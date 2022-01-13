@@ -1,82 +1,71 @@
-import React, {useState} from "react";
-import "../../styles/course.css"
+import React from "react";
+import Courses from "./Courses";
+import { Paper, TextField } from "@material-ui/core";
+import { Checkbox, Button } from "@material-ui/core";
+import "../../styles/course.css";
 
 
-function SingleCourse({ course, index, removeCourse }) {
-  return (
-    <div className="a-class">
-      <h5 className="single-class">{course.text}</h5>
-      <button className="delete-class"onClick={() => removeCourse(index)}>Delete</button>
-    </div>
-  );
-}
-
-function CourseForm({ addCourse }) {
-  const [value, setValue] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!value) return;
-    addCourse(value);
-    setValue("");
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        className="input"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        placeholder="Add new class"
-        className="add-class-input"
-      />
-      <button
-        className="add-btn"
-        color="primary"
-        variant="outlined"
-        type="submit"
-      >
-        Add
-      </button>
-    </form>
-  );
-}
-
-function Course() {
-  const [courses, setCourses] = useState([]);
-
-    const addCourse = (text) => {
-      const newCourses = [...courses, { text }];
-      setCourses(newCourses);
-    };
-
-    const removeCourse = (index) => {
-      const newCourses = [...courses];
-      newCourses.splice(index, 1);
-      setCourses(newCourses);
-    };
-
-    
-
-  return (
-    <div className="course_app flex">
-      <div className="course-card">
-        <div className="heading">Classes</div>
-        <CourseForm addCourse={addCourse} />
-        <div className="courses-list">
-          {courses.map((course, index) => (
-            <SingleCourse
-              key={index}
-              index={index}
-              course={course}
-              removeCourse={removeCourse}
+class Course extends Courses {
+  state = { courses: [], currentCourse: "" };
+  render() {
+    const { courses } = this.state;
+    return (
+      <div className="course_app flex">
+        <div className="course-card">
+          <div className="heading">Classes</div>
+          <form onSubmit={this.handleSubmit} className="flex">
+            <input
+              variant="outlined"
+              size="small"
+              style={{ width: "80%" }}
+              value={this.state.currentCourse}
+              required={true}
+              onChange={this.handleChange}
+              placeholder="Add new class"
+              className="add-class-input"
             />
-          ))}
+            <button
+              className="add-btn"
+              color="primary"
+              variant="outlined"
+              type="submit"
+            >
+              Add
+            </button>
+          </form>
+          <div>
+            {courses.map((course) => (
+              <div key={course._id} className="courses-list">
+                {/* <Checkbox
+                                    checked={course.completed}
+                                    onClick={() => this.handleUpdate(course._id)}
+                                    color="primary"
+                                /> */}
+                {/* <div
+                                    className={
+                                        course.completed
+                                            ? "course line_through"
+                                            : "course"
+                                    }
+                                >
+                                    {course.course}
+                                </div> */}
+                <h5 className="single-class">{course.course}</h5> 
+                
+                 <button
+                  onClick={() => this.handleDelete(course._id)}
+                  className="delete-class"
+                >
+                  Delete
+                </button>
+              </div>
+             ))} 
+           
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Course;

@@ -323,3 +323,7 @@
     padding-right: 20px;
     height: 26px;
 }
+
+.value-prop a {
+  color: black;
+}

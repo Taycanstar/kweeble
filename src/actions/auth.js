@@ -41,6 +41,8 @@ export const fetchData = () => async (dispatch) => {
   }
 };
 
+
+
 export const fetchSingleProfile = (id) => async (dispatch) => {
   try {
     const { data } = await api.fetchSingleProfile(id);
