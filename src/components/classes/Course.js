@@ -1,26 +1,100 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Courses from "./Courses";
 import { Paper, TextField } from "@material-ui/core";
 import { Checkbox, Button } from "@material-ui/core";
+import {
+  addCourses,
+  getCourses,
+  updateCourse,
+  deleteCourse,
+} from "../services/classServices";
 import "../../styles/course.css";
 
 
-class Course extends Courses {
-  state = { courses: [], currentCourse: "" };
-  render() {
-    const { courses } = this.state;
-    return (
-      <div className="course_app flex">
+
+
+
+
+const Course = () => {
+const [courses, setCourses] = useState([])
+const [currentCourse, setCurrentCourse] = useState("")
+
+const userData = JSON.parse(localStorage.getItem("profile"));
+
+    const filteredCourses =
+      courses &&
+      courses.filter((course) => 
+      course.user === userData._id);
+
+useEffect(() => {
+
+const loadCourses = async () => {
+  try {
+      const { data } = await getCourses();
+      setCourses(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+loadCourses();
+ 
+}, [])
+
+const handleChange = (e) => {
+  setCurrentCourse(e.target.value);
+};
+
+ const handleSubmit = async (e) => {
+    e.preventDefault();
+    const userId = JSON.parse(localStorage.getItem("profile"));
+    console.log(userId._id);
+    const originalCourses = courses;
+    try {
+      const { data } = await addCourses({
+        course: currentCourse,
+        user: userId._id,
+      });
+      const courses = originalCourses;
+      courses.push(data);
+      setCourses(courses)
+      setCurrentCourse("")
+      
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+    const handleDelete = async (currentCourse) => {
+    const originalCourses = courses;
+    try {
+      const courses = originalCourses.filter(
+        (course) => course._id !== currentCourse
+      );
+      setCourses(courses);
+      await deleteCourse(currentCourse);
+    } catch (error) {
+      setCourses(originalCourses);
+      console.log(error);
+    }
+  };
+
+
+
+
+
+  return (
+    <div className="course_app flex">
         <div className="course-card">
           <div className="heading">Classes</div>
-          <form onSubmit={this.handleSubmit} className="flex">
+          <form onSubmit={handleSubmit} className="flex">
             <input
               variant="outlined"
               size="small"
               style={{ width: "80%" }}
-              value={this.state.currentCourse}
+              value={currentCourse}
               required={true}
-              onChange={this.handleChange}
+              onChange={handleChange}
               placeholder="Add new class"
               className="add-class-input"
             />
@@ -34,38 +108,23 @@ class Course extends Courses {
             </button>
           </form>
           <div>
-            {courses.map((course) => (
+            {filteredCourses.map((course) => (
               <div key={course._id} className="courses-list">
-                {/* <Checkbox
-                                    checked={course.completed}
-                                    onClick={() => this.handleUpdate(course._id)}
-                                    color="primary"
-                                /> */}
-                {/* <div
-                                    className={
-                                        course.completed
-                                            ? "course line_through"
-                                            : "course"
-                                    }
-                                >
-                                    {course.course}
-                                </div> */}
-                <h5 className="single-class">{course.course}</h5> 
-                
-                 <button
-                  onClick={() => this.handleDelete(course._id)}
+             
+                <h5 className="single-class">{course.course}</h5>
+
+                <button
+                  onClick={() => handleDelete(course._id)}
                   className="delete-class"
                 >
                   Delete
                 </button>
               </div>
-             ))} 
-           
+            ))}
           </div>
         </div>
       </div>
-    );
-  }
+  )
 }
 
-export default Course;
+export default Course

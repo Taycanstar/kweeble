@@ -40,14 +40,11 @@ const EditUsername = () => {
       setData({ ...data, error: null });
 
       const token = localStorage.getItem("token");
+      const profile = JSON.parse(localStorage.getItem("profile"))
+      console.log(profile, "profile")
       const res = await axios.put(
-        "/auth",
+        `/api/${profile._id}`,
         {
-          email: data.email,
-          interests: data.interests,
-          major: data.major,
-          phoneNumber: data.phoneNumber,
-          name: data.name,
           username: data.username,
         },
         {
@@ -60,10 +57,16 @@ const EditUsername = () => {
 
       console.log(res);
 
-      setData({
+      if(res.data.codeName === "DuplicateKey"){
+        alert("username already exists")
+      }else{
+ setData({
         ...data,
         ...res.data,
       });
+      }
+
+     
       setError("none");
     } catch (error) {
       setData({ ...data, error: error.response.data.error });
