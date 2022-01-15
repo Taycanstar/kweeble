@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 @import url('http://fonts.cdnfonts.com/css/gotham');
-@import url('//db.onlinewebfonts.com/c/3a47f5f06b5484abfeee9eac90348a9c?family=Gotham');
+/* @import url('//db.onlinewebfonts.com/c/3a47f5f06b5484abfeee9eac90348a9c?family=Gotham'); */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +15,7 @@
    /* font-family: 'Gotham Book', sans-serif;  */
    /* font-family: 'Gotham Ultra', sans-serif; 
     */
-    font-family: "Gotham", sans-serif; 
+  font-family: "Gotham", sans-serif; 
   box-sizing: border-box;
   outline: none !important;
 
