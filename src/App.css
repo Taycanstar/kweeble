@@ -15,7 +15,7 @@
    /* font-family: 'Gotham Book', sans-serif;  */
    /* font-family: 'Gotham Ultra', sans-serif; 
     */
-    font-family: "Gotham"; 
+    font-family: "Gotham", sans-serif; 
   box-sizing: border-box;
   outline: none !important;
 
