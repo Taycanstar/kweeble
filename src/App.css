@@ -1,10 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+@import url('http://fonts.cdnfonts.com/css/gotham');
+@import url('//db.onlinewebfonts.com/c/3a47f5f06b5484abfeee9eac90348a9c?family=Gotham');
 * {
   margin: 0;
   padding: 0;
-  font-family: "Maven Pro", sans-serif !important;
+  /* font-family: "Maven Pro", sans-serif !important; */
   /* font-family: 'IBM Plex Mono', monospace; */
+  /* font-family: 'Gotham', sans-serif;  */
+  /* font-family: 'Gotham Black', sans-serif;  */
+  /* font-family: 'Gotham', sans-serif;  */
+  /* font-family: 'Gotham Thin', sans-serif;  */
+  /* font-family: 'Gotham XLight', sans-serif; */
+   /* font-family: 'Gotham Book', sans-serif;  */
+   /* font-family: 'Gotham Ultra', sans-serif; 
+    */
+    font-family: "Gotham"; src: url("//db.onlinewebfonts.com/t/3a47f5f06b5484abfeee9eac90348a9c.eot"); src: url("//db.onlinewebfonts.com/t/3a47f5f06b5484abfeee9eac90348a9c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/3a47f5f06b5484abfeee9eac90348a9c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/3a47f5f06b5484abfeee9eac90348a9c.woff") format("woff"), url("//db.onlinewebfonts.com/t/3a47f5f06b5484abfeee9eac90348a9c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/3a47f5f06b5484abfeee9eac90348a9c.svg#Gotham") format("svg"); 
   box-sizing: border-box;
   outline: none !important;
 
