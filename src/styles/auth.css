@@ -19,6 +19,9 @@
   border-radius: 3px;
   cursor: pointer;
 }
+.login-cta {
+  font-weight: 500;
+}
 
 .pill {
   padding-bottom: 10px;
@@ -61,11 +64,12 @@
 
 .signup-input {
   padding: 12px 16px;
-  font-size: 1rem;
+  font-size: 16px;
   margin-bottom: 10px;
   box-shadow: 0px 0px 3px 0px rgb(0 0 0 / 20%);
   border: none;
   border-radius: 5px;
+  font-weight: 500 !important;
 }
 
 .namef {
@@ -86,6 +90,7 @@
   margin-top: 10px;
   margin-bottom: 10px;
   cursor: pointer;
+  font-weight: 500 !important;
 }
 
 .signup-form-btn:hover {
@@ -102,9 +107,11 @@
 .bottom-text {
   text-align: center;
   margin-bottom: 10px;
+  font-weight: 500;
 }
 .login-bottom {
   text-align: center;
+  font-weight: 500;
 }
 
 .signup-content a {
@@ -124,6 +131,7 @@ a:visited {
   margin-right: 10px;
   font-size: 12px;
   color: #606770;
+  font-weight: 500;
 }
 
 .colleges {
@@ -245,6 +253,7 @@ a:hover {
   margin-right: 10px;
   font-size: 12px;
   color: #606770;
+  font-weight: 500;
 }
 
 .gender {
@@ -260,6 +269,7 @@ a:hover {
   margin-right: 10px;
   font-size: 12px;
   color: #606770;
+  font-weight: 500;
 }
 
 .birthday {
@@ -319,5 +329,6 @@ select:not(:-internal-list-box) {
     padding-right: 20px;
     height: 36px;
     font-size: 15px;
+    font-weight: 500;
 }
 

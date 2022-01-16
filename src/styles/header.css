@@ -136,6 +136,7 @@ header .MuiAvatar-root {
   top: -53px !important; */
   position: absolute !important;
   left: 10px !important;
+  padding-right: 10px;
 }
 
 .brand {
@@ -171,7 +172,7 @@ header .MuiAvatar-root {
 }
 
 .drop-label {
-  font-weight: lighter;
+  font-weight: 600;
   padding-left: 5px;
   font-size: 1.08rem;
 }

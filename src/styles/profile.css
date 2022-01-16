@@ -55,14 +55,14 @@ body {
   top: 20px;
   left: 10px;
   color: #0078d7;
-  font-weight: lighter;
+  font-weight: 500;
 }
 
 .edit-input {
   border: none;
   /* border-bottom: lightgray solid 1px; */
 
-  width: 350px;
+  width: 100%;
   /* margin-bottom: 2px; */
   font-size: 1rem;
   padding-bottom: 8px;
@@ -95,7 +95,7 @@ body {
 .save-btn {
   margin-top: 20px;
   padding: 15px;
-  width: 350px;
+  width: 100%;;
   color: white;
   background-color: #0078d7;
   border: none;
@@ -196,6 +196,7 @@ body {
     background-color: white;
     border: 1px solid black;
     cursor: pointer;
+    font-weight: 500;
     
   }
 
@@ -265,8 +266,9 @@ body {
   }
 
   .personal p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding-bottom: 2px;
+    font-weight: 500;
   }
 
   
@@ -288,17 +290,19 @@ body {
   }
 
   .social p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding-bottom: 2px;
+    font-weight: 500;
   }
 
   .user-interests{
   background-image: linear-gradient(to right top, #00c6ff, #00b4ff, #00a1ff, #008bff, #0072ff);
+   /* background-color: #f7f5f1; */
     flex: 1;
     min-height: 80px;
     padding: 10px;
 
-    
+    /* border-bottom: 1px solid lightgray; */
     color: white;
     
   }
@@ -309,29 +313,34 @@ body {
   }
 
   .user-interests p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding-bottom: 2px;
+    font-weight: 500;
+    
   }
 
   
 
   .studies {
     background-color: #f7f5f1;
+    background-image: linear-gradient(to left bottom, #f9f871, #ffe469, #ffd166, #ffbe66, #ffac69, #ffa16c, #ff9670, #ff8c76, #ff847b, #ff7d81, #ff7689, #ff6f91);
     flex:0.5;
     padding: 10px;
-    
-    
+    /* border-bottom: 1px solid lightgray; */
+    color: white;
 
   }
 
   .studies h5 {
     font-size: 1rem;
     padding-bottom: 5px;
+    
   }
 
   .studies p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding-bottom: 2px;
+    font-weight: 500;
   }
 
   
@@ -349,8 +358,9 @@ body {
   }
 
   .current-classes p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding-bottom: 2px;
+    font-weight: 500;
   }
 
   
@@ -561,8 +571,9 @@ body {
   }
 
   .personal p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding-bottom: 2px;
+    font-weight: 500;
   }
 
   
@@ -584,13 +595,15 @@ body {
   }
 
   .social p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding-bottom: 2px;
+    font-weight: 500;
   }
 
 
   .user-interests{
-  background-image: linear-gradient(to right top, #00c6ff, #00b4ff, #00a1ff, #008bff, #0072ff);
+  /* background-image: linear-gradient(to right top, #00c6ff, #00b4ff, #00a1ff, #008bff, #0072ff); */
+   background-color: #f7f5f1;
     min-height: 80px;
     padding: 10px;
     
@@ -606,15 +619,17 @@ body {
   }
 
   .user-interests p {
-    font-size: 0.8rem;
+    font-size: 1rem;
     padding-bottom: 2px;
+    font-weight: 500;
   }
 
   
 
   .studies {
-    background-image: linear-gradient(to left bottom, #f9f871, #ffe469, #ffd166, #ffbe66, #ffac69, #ffa16c, #ff9670, #ff8c76, #ff847b, #ff7d81, #ff7689, #ff6f91);
-; color: white;
+    /* background-image: linear-gradient(to left bottom, #f9f871, #ffe469, #ffd166, #ffbe66, #ffac69, #ffa16c, #ff9670, #ff8c76, #ff847b, #ff7d81, #ff7689, #ff6f91); */
+     background-color: #f7f5f1;
+ color: linear-gradient(to left bottom, #f9f871, #ffe469, #ffd166, #ffbe66, #ffac69, #ffa16c, #ff9670, #ff8c76, #ff847b, #ff7d81, #ff7689, #ff6f91);
     flex:0.5;
     padding: 10px;
     
@@ -628,8 +643,10 @@ body {
   }
 
   .studies p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding-bottom: 2px;
+    font-weight: 500;
+
   }
 
   
@@ -647,8 +664,9 @@ body {
   }
 
   .current-classes p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding-bottom: 2px;
+    font-weight: 500;
   }
 
   .user-fourth-row {
