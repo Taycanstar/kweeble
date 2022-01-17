@@ -1,0 +1,108 @@
+.classes-body {
+  padding-top: 45px;
+ 
+}
+
+.class-name-header {
+   background-color: var(--primary);
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: 500 ;
+}
+
+.class-search {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  
+}
+.flex {
+  display: flex;
+}
+
+.search-form {
+  width: 100%;
+}
+
+.search-class-input {
+  padding-left: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 7px;
+  border: none;
+  width: 80%;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.addClass-btn {
+  width: 20%;
+  margin-left: 10px;
+  border: none;
+  background-color: var(--primary);
+  border-radius: 0px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.addClass-btn:hover {
+  cursor: pointer;
+}
+
+.course-list {
+  display: flex;
+}
+
+.class-listItems {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.single-class-item {
+  width: 80%;
+  font-size: 1.2rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.delete-class-item {
+  margin-right: 10px;
+  width: 20%;
+  margin-left: 10px;
+  border: none;
+  background-color: #e82127;
+  border-radius: 0px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding-top:8px;
+  padding-bottom:8px;
+  
+}
+
+.delete-class-item:hover {
+  cursor:pointer;
+}
+
+.course-list {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}

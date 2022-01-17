@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Courses from "./Courses";
 import { Paper, TextField } from "@material-ui/core";
 import { Checkbox, Button } from "@material-ui/core";
@@ -8,43 +8,34 @@ import {
   updateCourse,
   deleteCourse,
 } from "../services/classServices";
-import "../../styles/course.css";
-
-
-
-
-
+import "../../styles/class.css";
 
 const Course = () => {
-const [courses, setCourses] = useState([])
-const [currentCourse, setCurrentCourse] = useState("")
+  const [courses, setCourses] = useState([]);
+  const [currentCourse, setCurrentCourse] = useState("");
 
-const userData = JSON.parse(localStorage.getItem("profile"));
+  const userData = JSON.parse(localStorage.getItem("profile"));
 
-    const filteredCourses =
-      courses &&
-      courses.filter((course) => 
-      course.user === userData._id);
+  const filteredCourses =
+    courses && courses.filter((course) => course.user === userData._id);
 
-useEffect(() => {
+  useEffect(() => {
+    const loadCourses = async () => {
+      try {
+        const { data } = await getCourses();
+        setCourses(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    loadCourses();
+  }, []);
 
-const loadCourses = async () => {
-  try {
-      const { data } = await getCourses();
-      setCourses(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-loadCourses();
- 
-}, [])
+  const handleChange = (e) => {
+    setCurrentCourse(e.target.value);
+  };
 
-const handleChange = (e) => {
-  setCurrentCourse(e.target.value);
-};
-
- const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const userId = JSON.parse(localStorage.getItem("profile"));
     console.log(userId._id);
@@ -56,16 +47,14 @@ const handleChange = (e) => {
       });
       const courses = originalCourses;
       courses.push(data);
-      setCourses(courses)
-      setCurrentCourse("")
-      
+      setCourses(courses);
+      setCurrentCourse("");
     } catch (error) {
       console.log(error);
     }
   };
 
-
-    const handleDelete = async (currentCourse) => {
+  const handleDelete = async (currentCourse) => {
     const originalCourses = courses;
     try {
       const courses = originalCourses.filter(
@@ -79,52 +68,43 @@ const handleChange = (e) => {
     }
   };
 
-
-
-
-
   return (
-    <div className="course_app flex">
-        <div className="course-card">
-          <div className="heading">Classes</div>
-          <form onSubmit={handleSubmit} className="flex">
+    <div className="classes-body">
+      <div className="classes-main-content">
+        <div className="class-name-header">
+          <h1>Classes</h1>
+        </div>
+        <div className="class-search">
+          <form onSubmit={handleSubmit} className=" search-form flex">
             <input
-              variant="outlined"
-              size="small"
-              style={{ width: "80%" }}
               value={currentCourse}
               required={true}
               onChange={handleChange}
               placeholder="Add new class"
-              className="add-class-input"
+              className="search-class-input"
             />
-            <button
-              className="add-btn"
-              color="primary"
-              variant="outlined"
-              type="submit"
-            >
+            <button className="addClass-btn" type="submit">
               Add
             </button>
           </form>
-          <div>
-            {filteredCourses.map((course) => (
-              <div key={course._id} className="courses-list">
-             
-                <h5 className="single-class">{course.course}</h5>
+        </div>
+        <div className="class-listItems">
+          {filteredCourses.map((course) => (
+            <div key={course._id} className="course-list">
+              <h5 className="single-class-item">{course.course}</h5>
 
-                <button
-                  onClick={() => handleDelete(course._id)}
-                  className="delete-class"
-                >
-                  Delete
-                </button>
-              </div>
-            ))}
-          </div>
+              <button
+                onClick={() => handleDelete(course._id)}
+                className="delete-class-item"
+              >
+                Delete
+              </button>
+            </div>
+          ))}
         </div>
       </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Course
+export default Course;
