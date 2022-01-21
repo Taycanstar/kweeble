@@ -5,14 +5,18 @@
 
 .class-name-header {
    background-color: var(--primary);
+   background-image: linear-gradient(to right top, #00c6ff, #00b4ff, #00a1ff, #008bff, #0072ff);
   width: 100%;
   height: 100%;
   color: white;
   padding-bottom: 10px;
   padding-top: 10px;
   padding-left: 10px;
-  font-size: 14px;
-  font-weight: 500 ;
+
+}
+
+.class-name-header h1 {
+  font-weight: 600;
 }
 
 .class-search {

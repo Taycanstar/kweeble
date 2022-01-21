@@ -27,6 +27,7 @@ import EditUsername from "./components/Profile/EditUsername";
 import Botbar from "./components/botbar/Botbar";
 import Course from "./components/classes/Course";
 import SingleProfile from './components/SingleProfile/SingleProfile'
+import Grades from "./components/grades/Grades";
 
 // import store from "./store";
 
@@ -51,6 +52,7 @@ function App() {
           />
           <ProtectedRoute path="/change-email" component={EditEmail} />
           <ProtectedRoute path="/courses" component={Course} />
+          <ProtectedRoute path="/grades" component={Grades} />
           
           <ProtectedRoute path="/change-username" component={EditUsername} />
           <ProtectedRoute path="/change-password" component={ChangePassword} />
@@ -75,6 +77,7 @@ function App() {
           <Route path="*" component={NotFound} />
         
         </Switch>
+        <Botbar/>
         
       </Router>
     </div>

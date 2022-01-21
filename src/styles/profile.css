@@ -602,8 +602,8 @@ body {
 
 
   .user-interests{
-  /* background-image: linear-gradient(to right top, #00c6ff, #00b4ff, #00a1ff, #008bff, #0072ff); */
-   background-color: #f7f5f1;
+  background-image: linear-gradient(to right top, #00c6ff, #00b4ff, #00a1ff, #008bff, #0072ff);
+   /* background-color: #f7f5f1; */
     min-height: 80px;
     padding: 10px;
     

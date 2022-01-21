@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
 import "../../styles/botbar.css";
@@ -8,10 +8,26 @@ import AddIcon from "@mui/icons-material/Add";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import ViewListRoundedIcon from "@mui/icons-material/ViewListRounded";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchData } from "../../actions/auth";
 
 const Botbar = () => {
+  const data = useSelector((state) => state.auth.authData);
+
+  const dispatch = useDispatch();
+
+  const [user, setUser] = useState(localStorage.getItem("token"));
+
+    useEffect(() => {
+    dispatch(fetchData());
+    setInterval(() => {
+      dispatch(fetchData());
+    }, 1000 * 60); //a sec = 1000, a min = 1000 * 60
+  }, []);
   return (
-    <div className="bot-bar">
+   <div>
+   {user && (
+        <div className="bot-bar">
       <div className="bot-sticky">
         <div className="container">
           <div className="bot-inner-content">
@@ -21,34 +37,18 @@ const Botbar = () => {
               </Link>
             </div>
             <div className="bot-icons">
-              <Link to="/">
+              <Link to="/grades">
                 <ViewListRoundedIcon />
               </Link>
             </div>
-            {/* <div className="bot-icons">
-              <Link to="/">
-                <BallotOutlinedIcon />
-              </Link>
-            </div> */}
-            {/* <div className="bot-icons">
-              <Link to="/add-post">
-                <AddIcon />
-              </Link>
-            </div> */}
-            {/* <div className="bot-icons">
-              <Link to="/notifications">
-                <NotificationsOutlinedIcon />
-              </Link>
-            </div> */}
-            {/* <div className="bot-icons">
-              <Link to="/messages">
-                <MailOutlineOutlinedIcon />
-              </Link>
-            </div> */}
+            
           </div>
         </div>
       </div>
     </div>
+   )}
+   </div>
+ 
   );
 };
 
