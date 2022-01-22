@@ -404,7 +404,7 @@ const Signup = (props) => {
             By creating an account, agreeing to our
             <Link to="/privacy-policy">
               {" "}
-              Terms of Service and Privacy Policy
+              Terms of Service and User Agreement
             </Link>
           </p>
 

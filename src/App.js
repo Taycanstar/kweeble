@@ -28,6 +28,7 @@ import Botbar from "./components/botbar/Botbar";
 import Course from "./components/classes/Course";
 import SingleProfile from './components/SingleProfile/SingleProfile'
 import Grades from "./components/grades/Grades";
+import HelpCenter from "./components/Profile/HelpCenter";
 
 // import store from "./store";
 
@@ -51,6 +52,7 @@ function App() {
             component={PasswordVerification}
           />
           <ProtectedRoute path="/change-email" component={EditEmail} />
+          <ProtectedRoute path="/help-center" component={HelpCenter} />
           <ProtectedRoute path="/courses" component={Course} />
           <ProtectedRoute path="/grades" component={Grades} />
           

@@ -15,6 +15,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import PersonIcon from "@material-ui/icons/Person";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { fetchData } from "../../actions/auth";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 
 const Header = (props) => {
   const data = useSelector((state) => state.auth.authData);
@@ -69,8 +70,8 @@ const Header = (props) => {
                   <Dropdown>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
                       {/* <div className="drop-data"> */}
-                        <Avatar src={data?.photo || "default.png"} />
-                        {/* <h4 className="log-nav">{data?.name}</h4> */}
+                      <Avatar src={data?.photo || "default.png"} />
+                      {/* <h4 className="log-nav">{data?.name}</h4> */}
                       {/* </div> */}
                     </Dropdown.Toggle>
 
@@ -88,6 +89,14 @@ const Header = (props) => {
                           <div className="drop-item">
                             <PersonIcon />
                             <h4 className="drop-label">View my profile</h4>
+                          </div>
+                        </Link>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <Link to="/help-center">
+                          <div className="drop-item">
+                            <SupportAgentIcon />
+                            <h4 className="drop-label">Help Center</h4>
                           </div>
                         </Link>
                       </Dropdown.Item>
