@@ -33,12 +33,12 @@ const Botbar = () => {
           <div className="bot-inner-content">
             <div className="bot-icons">
               <Link to="/">
-                <HomeRoundedIcon fontSize="large" />
+                <HomeRoundedIcon sx={{fontSize:30}} />
               </Link>
             </div>
             <div className="bot-icons">
               <Link to="/grades">
-                <ViewListRoundedIcon fontSize="large" />
+                <ViewListRoundedIcon sx={{fontSize: 30}} />
               </Link>
             </div>
             
