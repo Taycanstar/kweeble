@@ -35,12 +35,12 @@ const MainText = () => {
       {user === null ? (
         <div className="value-prop">
           <div className="main-title">
-            <h1>Experience the college directory </h1>
+            <h1>Experience the college directory and grade asistant</h1>
           </div>
           <div className="secondary-title">
             <h5>
               Connect with students filtering through majors, interests, and
-              more...
+              keep track of your grades
             </h5>
           </div>
           <div className="main-btns">
