@@ -124,7 +124,7 @@ const EditProfile = () => {
               </div>
               {/* donda */}
 
-              <form onSubmit={onSubmit}>
+              <form className="edit-profile-form"onSubmit={onSubmit}>
                 <input
                   type="file"
                   accept="image/jpeg, image/png"

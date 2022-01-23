@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ig from "../../images/igg.png";
 import snap from "../../images/sn.png";
 import {Link} from 'react-router-dom';
+import ecLogo from "../../images/ec-logo.png"
 // import twitter from "../../images/tw.png";
 
 const ResultCard = ({ person }) => {
@@ -23,6 +24,14 @@ const ResultCard = ({ person }) => {
       height: theme.spacing(9),
     },
   }));
+  
+  const [collegePhoto, setCollegPhoto] = useState("")
+
+  useEffect(() => {
+    if(person.college == "Eckerd College"){
+      setCollegPhoto(ecLogo)
+    }
+  },[])
 
   const classes = useStyles();
 
@@ -53,18 +62,23 @@ const ResultCard = ({ person }) => {
         1. Remove authentication if possible
         2. Send the auth token via a cookie instead of via header so that it gets sent with every browser request
         3. Get the photo via JavaScript/Axios */}
-      <Link to={`/profile/${person._id}`}><Avatar src={person.photo || "default.png"} className={classes.large} /></Link>
+      <div className="card-photo">
+        <Link to={`/profile/${person._id}`}>
+          <Avatar
+            style={{ marginLeft: "22px" }}
+            src={person.photo || "default.png"}
+            className={classes.large}
+          />
+        </Link>
+        <img className="ec-card-logo" src={collegePhoto} alt="eckerd-college" />
+      </div>
+
       <div className="user-info-card">
         <div className="main-name">
           <h2 className="card-display-name">{person.name}</h2>
-          {/* <span className="dot">•</span> */}
-          <h2
-            className={
-              person.college === "Eckerd College" ? "eckerd-card" : "polk-card"
-            }
-          >
-            {person.college}
-          </h2>
+          <Link to={`/profile/${person._id}`}>
+            <h2 className="card-username">@{person.username}</h2>
+          </Link>
         </div>
 
         <h3 className="card-display-info">

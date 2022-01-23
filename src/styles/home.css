@@ -93,7 +93,7 @@
   /* border-radius: 10px; */
   border: 1px solid lightgray;
   padding-top: 15px;
-  padding-left: 22px;
+  /* padding-left: 22px; */
   padding-right: 16px;
   padding-bottom: 10px;
   margin-bottom: 10px;
@@ -109,7 +109,6 @@
   padding-top: 5px;
   padding-bottom: 10px;
 
-  margin-right: 10px;
 }
 
 .card-display-info {
@@ -268,7 +267,7 @@
     padding-top: 5px;
     padding-bottom: 10px;
 
-    margin-right: 3px;
+   
   }
 
   .card-display-info-media {
@@ -329,4 +328,18 @@
 
 .value-prop a {
   color: black;
+}
+
+.ec-card-logo {
+  width: 90px;
+  padding-top: 20px;
+  padding-left: 8px;
+}
+
+.card-username {
+   font-size: 0.8rem;
+  padding-top: 5px;
+  margin-left: 3px;
+  color: black !important;
+
 }
