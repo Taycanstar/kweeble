@@ -46,7 +46,7 @@ function App() {
           <ProtectedRoute path="/settings" component={Settings} />
           <ProtectedRoute path="/account" component={Account} />
           <ProtectedRoute path="/account-info" component={AccountInfo} />
-          <ProtectedRoute path="/profile/:id" component={SingleProfile} />
+          <ProtectedRoute path="/user/:id" component={SingleProfile} />
           <ProtectedRoute
             path="/verify-password"
             component={PasswordVerification}

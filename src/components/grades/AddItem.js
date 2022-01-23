@@ -119,7 +119,7 @@ const AddItem = ({ filteredItems, course, getCourseGrade, updateCourses }) => {
             />
 
             <button className="addItem-btn" type="submit">
-              Add Item
+              Add 
             </button>
           </form>
         </div>

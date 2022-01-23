@@ -113,7 +113,7 @@
 
 .delete-item-btn {
   margin-right: 10px;
-  width: 20%;
+  width: 100%;
   margin-left: 10px;
   border: none;
   background-color: #e82127;
@@ -251,4 +251,14 @@
 .f-grade-class {
   background-color: var(--fail);
   color: black;
+}
+
+.item-first {
+  display: flex;
+  flex: 0.7;
+}
+
+.item-second {
+  display: flex;
+  flex: 0.3;
 }

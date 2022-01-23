@@ -99,15 +99,20 @@ const Item = ({
   return (
     <div>
       <div className="listOfItems" onClick={showGrade}>
-        <p className="single-item-item">{item.item}</p>
-        <p className="single-item-item">{item.percentage}%</p>
-        <button
-          onClick={() => handleDeleteItem(item._id)}
-          className="delete-item-btn"
-        >
-          Delete
-        </button>
-        <p className="total-item-grade">{item.itemGrade} </p>
+        <div className="item-first">
+          <p className="single-item-item">{item.item}</p>
+          <p className="single-item-item">{item.percentage}%</p>
+        </div>
+
+        <div className="item-second">
+          <button
+            onClick={() => handleDeleteItem(item._id)}
+            className="delete-item-btn"
+          >
+            Delete
+          </button>
+          <p className="total-item-grade">{item.itemGrade} </p>
+        </div>
       </div>
 
       {gradeShow && (
@@ -131,7 +136,7 @@ const Item = ({
               placeholder="Grade"
             />
 
-            <button className="add-grade-btn">Add Grade</button>
+            <button className="add-grade-btn">Add</button>
           </form>
 
           <div>

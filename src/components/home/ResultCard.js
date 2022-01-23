@@ -63,7 +63,7 @@ const ResultCard = ({ person }) => {
         2. Send the auth token via a cookie instead of via header so that it gets sent with every browser request
         3. Get the photo via JavaScript/Axios */}
       <div className="card-photo">
-        <Link to={`/profile/${person._id}`}>
+        <Link to={`/user/${person._id}`}>
           <Avatar
             style={{ marginLeft: "22px" }}
             src={person.photo || "default.png"}
@@ -76,7 +76,7 @@ const ResultCard = ({ person }) => {
       <div className="user-info-card">
         <div className="main-name">
           <h2 className="card-display-name">{person.name}</h2>
-          <Link to={`/profile/${person._id}`}>
+          <Link to={`/user/${person._id}`}>
             <h2 className="card-username">@{person.username}</h2>
           </Link>
         </div>
