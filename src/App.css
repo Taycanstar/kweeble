@@ -26,6 +26,16 @@ a:hover {
 :root {
   --primary: #0078d7;
   --secondary: #f7f5f1;
+  --lowa: #aaff72;
+  --higha: #73e06b;
+  --highb: #e6ff70;
+  --lowb: #ffdc76;
+  --c: #ffa67d;
+  --fail: #ff8b7c;
+  --agrade: #00e367;
+  --bgrade: #00abff;
+  --cgrade: #ffa500;
+  --fgrade: #ff6768;
 }
 
 .container {
