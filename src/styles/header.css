@@ -186,7 +186,10 @@ header .dropdown-toggle {
   .log-nav {
     display: none;
   }
-  
+  .grades-icon{
+  display: none;
+}
+
 
   .brand img {
     width: 150px;

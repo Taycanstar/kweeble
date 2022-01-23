@@ -9,7 +9,7 @@ export function addCourses(course){
 }
 
 export function updateCourse(id, course){
-    return axios.put("/auth/courses"+"/"+id, course)
+    return axios.put("/auth/courses" + "/" + id, course)
 }
 
 export function deleteCourse(id) {

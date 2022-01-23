@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import AddItem from './AddItem'
 
-const Grade = ({ course }) => {
+const Grade = ({ course, updateCourses }) => {
   const [itemIsOpen, setItemIsOpen] = useState(false);
-      const [courseGrade, setCourseGrade] = useState(null)
 
 
   const openItem = () => {
@@ -11,19 +10,16 @@ const Grade = ({ course }) => {
   };
 
 
- const getCourseGrade = (grade) => {
-   setCourseGrade(grade)
-
- }
-
 
   return (
     <div>
       <div key={course._id} className="course-list" onClick={openItem}>
         <h5 className="single-class-item">{course.course}</h5>
-          <h5>{courseGrade}</h5>
+        <h5>{course.courseGrade}</h5>
       </div>
-      {itemIsOpen && <AddItem getCourseGrade={getCourseGrade} course={course._id}  />}
+      {itemIsOpen && (
+        <AddItem updateCourses={updateCourses} course={course._id} />
+      )}
     </div>
   );
 };

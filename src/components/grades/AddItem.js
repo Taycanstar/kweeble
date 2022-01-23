@@ -1,125 +1,103 @@
-import React, { useState, useEffect } from 'react'
-import Item from './Item'
-import {addItem, getItems} from '../services/itemsServices'
+import React, { useState, useEffect } from "react";
+import Item from "./Item";
+import { addItem, deleteItem, getItems } from "../services/itemsServices";
+import { updateCourse } from "../services/classServices";
 
-const AddItem = ({ filteredItems, course, getCourseGrade }) => {
+const AddItem = ({ filteredItems, course, getCourseGrade, updateCourses }) => {
+  const [formVal, setFormVal] = useState({
+    item: "",
+    percentage: "",
+  });
 
-    const [formVal, setFormVal] = useState({
-      item: "",
-      percentage: ""
-    });
-
-    const [items, setItems] = useState([])
-  
-
-  console.log(course, "course")
+  const [items, setItems] = useState([]);
 
   const handleUpdateItems = (id) => {
-    const updated = items.filter(item => item._id !== id)
-    
-    setItems(updated)
-  }
-
-  const handleUpdateItemGrade = (grade, id) => {
-    const updated = items.map(item => item._id === id ? grade : item  )
-    console.log("updated ===>", updated);
-    setItems(updated)
-  }
-
-
-
-
-    const handleChange = (e) => {
-         setFormVal({...formVal, [e.target.name]: e.target.value})
-         console.log(formVal)
-    };
-
-
-     const handleCourseGrade = () => {
-
- const totalGrades2 = items.map((x) => x.percentage * x.itemGrade)
-       console.log(totalGrades2, "items from handlecourse");
-
-      const totalGrades = items.map((x) => x.percentage * x.itemGrade)
-          .reduce((a, b) => parseInt(a) + parseInt(b), 0);
-         
-
-            console.log(items, "ggrades");
-
-          const totalPercentages = items
-            .map((x) => x.percentage)
-            .reduce((a, b) => parseInt(a) + parseInt(b), 0);
-
-
-            const finalAnswer = totalGrades / totalPercentages;
-             getCourseGrade(finalAnswer)
-           
-
-          
+    const updated = items.filter((item) => item._id !== id);
+    setItems(updated);
   };
 
+  const handleCourseGrade = async (myItems) => {
+    console.log("items in course grade ===>", myItems);
+    const totalGrades = myItems
+      .map((x) => x.percentage * x.itemGrade)
+      .reduce((a, b) => parseInt(a) + parseInt(b), 0);
 
+    const totalPercentages = myItems
+      .map((x) => x.percentage)
+      .reduce((a, b) => parseInt(a) + parseInt(b), 0);
+
+    const finalAnswer = totalGrades / totalPercentages;
+
+    const { data } = await updateCourse(course, {
+      courseGrade: finalAnswer,
+    });
+
+    updateCourses(course, data);
+  };
+
+  const handleDeleteItem = async (id) => {
+    try {
+      await deleteItem(course, id);
+      const filtered = items.filter((item) => item._id !== id);
+      setItems(filtered);
+      handleCourseGrade(filtered);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleUpdateItemGrade = (grade, id) => {
+    const updated = items.map((item) => (item._id === id ? grade : item));
+    setItems(updated);
+    handleCourseGrade(updated)
+  };
+
+  const handleChange = (e) => {
+    setFormVal({ ...formVal, [e.target.name]: e.target.value });
+  };
 
   useEffect(() => {
     const loadItems = async () => {
       try {
-            const userData = JSON.parse(localStorage.getItem("profile"));
-        const { data } = await getItems();
-       const filteredItems2 = data.filter(item => item.course === course && userData._id === item.user )
-       setItems(filteredItems2);
-   } catch (error) {
+        const { data } = await getItems(course);
+        setItems(data);
+      } catch (error) {
         console.log(error);
       }
     };
     loadItems();
   }, []);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
+    try {
+      const { percentage, item } = formVal;
 
+      const serverData = {
+        item,
+        percentage,
+        itemGrade: "",
+      };
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      
-      try {
-
-      const profile = JSON.parse(localStorage.getItem("profile"));
-
-
-    const {item, percentage} = formVal
-
-          const serverData = {
-                course,
-                item,
-                percentage,
-                itemGrade: "",
-                user: profile._id
-          }
-      
-      const {data} = await addItem(serverData)
-
-      console.log(data, "success")
-
-    setItems((oldArr) => [...oldArr, data])
+      const { data } = await addItem(serverData, course);
+      console.log(data, "item added");
+      setItems(data);
+      handleCourseGrade(data);
 
       setFormVal({
-          item: "",
-          percentage: ""
-      })
-
-     
-      } catch (error) {
-        console.log(error);
-      }
-      
-    };
-
-    console.log(items, "items")
+        item: "",
+        percentage: "",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div>
       <div>
         <div className="item-search">
-         
           <form onSubmit={handleSubmit} className=" search-form flex">
             <input
               type="text"
@@ -147,7 +125,15 @@ const AddItem = ({ filteredItems, course, getCourseGrade }) => {
         </div>
         <div className="items-list">
           {items.map((item, i) => (
-            <Item handleUpdateItemGrade={handleUpdateItemGrade} handleCourseGrade={handleCourseGrade} handleUpdateItems={handleUpdateItems} item={item} key={i} />
+            <Item
+              handleUpdateItemGrade={handleUpdateItemGrade}
+              handleCourseGrade={handleCourseGrade}
+              handleUpdateItems={handleUpdateItems}
+              handleDeleteItem={handleDeleteItem}
+              item={item}
+              key={i}
+              course={course}
+            />
           ))}
         </div>
       </div>
@@ -155,4 +141,4 @@ const AddItem = ({ filteredItems, course, getCourseGrade }) => {
   );
 };
 
-export default AddItem
+export default AddItem;

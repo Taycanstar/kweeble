@@ -2,25 +2,26 @@ import React, { useState, useEffect } from "react";
 import { addGrade, getGrades, deleteGrade } from "../services/gradesServices";
 import { updateItem, deleteItem } from "../services/itemsServices";
 
-const Item = ({ item, handleUpdateItems, handleCourseGrade, handleUpdateItemGrade }) => {
+const Item = ({
+  item,
+  course,
+  handleUpdateItems,
+  handleCourseGrade,
+  handleUpdateItemGrade,
+  handleDeleteItem,
+}) => {
   const [gradeShow, setGradeShow] = useState(false);
   const [grades, setGrades] = useState([]);
   const [formVal, setFormVal] = useState({
     gradeName: "",
     grade: "",
   });
-  const [itemGrade, setItemGrade] = useState(null);
-  
 
   useEffect(() => {
     const loadGrades = async () => {
       try {
-        const { data } = await getGrades();
-        const filteredGrades = await data.filter(
-          (grade) => grade.item === item._id
-        );
-        setGrades(filteredGrades);
-        setItemGrade(item.itemGrade);
+        const { data } = await getGrades(course, item._id);
+        setGrades(data);
       } catch (error) {
         console.log(error);
       }
@@ -32,7 +33,6 @@ const Item = ({ item, handleUpdateItems, handleCourseGrade, handleUpdateItemGrad
     setGradeShow(!gradeShow);
   };
 
- 
   const handleItemGrade = async (myGrades) => {
     try {
       const numberOfGrades = myGrades.length;
@@ -43,22 +43,14 @@ const Item = ({ item, handleUpdateItems, handleCourseGrade, handleUpdateItemGrad
 
       const finalAns = (totalGrades / (numberOfGrades * 100)) * 100;
 
-      const {data} = await updateItem(item._id, { itemGrade: finalAns });
+      console.log(finalAns, "final answer");
 
-      const myData = {
-    course: data.course,
-    item: data.item,
-     itemGrade: finalAns,
-    percentage: data.percentage,
-    user: data.user,
-    _id: data._id
-      }
+      const { data } = await updateItem(course, item._id, {
+        itemGrade: finalAns,
+      });
 
-      handleUpdateItemGrade(myData, item._id)
-        
-      console.log(data, "success");
-      setItemGrade(finalAns);
-      // setItemGrade(response.data.itemGrade)
+      handleUpdateItemGrade(data, data._id);
+
     } catch (error) {
       console.log(error);
     }
@@ -68,31 +60,21 @@ const Item = ({ item, handleUpdateItems, handleCourseGrade, handleUpdateItemGrad
     setFormVal({ ...formVal, [e.target.name]: e.target.value });
   };
 
- 
-  
-
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
 
-      const userData = JSON.parse(localStorage.getItem("profile"));
-
       const { gradeName, grade } = formVal;
-
       const serverData = {
-        item: item._id,
-        user: userData._id,
         gradeName,
         grade,
       };
 
-      const { data } = await addGrade(serverData);
-        console.log(data, "grade added");
-      setGrades((oldArr) => [...oldArr, data]);
-      handleItemGrade([...grades, data]);
-     handleCourseGrade()
-  
-   
+      const { data } = await addGrade(course, item._id, serverData);
+
+
+      setGrades(data.grades);
+      handleItemGrade(data.grades);
 
       setFormVal({
         gradeName: "",
@@ -103,23 +85,12 @@ const Item = ({ item, handleUpdateItems, handleCourseGrade, handleUpdateItemGrad
     }
   };
 
-  const handleDelete = async (id) => {
-    try {
-      const res = await deleteItem(id);
-      handleUpdateItems(id);
-
-      console.log("deleted", res);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const handleDeleteGrade = async (id) => {
     try {
-      const res = await deleteGrade(id);
-      const deleted = grades.filter((grade) => grade._id !== id);
-      setGrades(deleted);
-      handleItemGrade(deleted);
+      const { data } = await deleteGrade(course, item._id, id);
+      console.log(data, "grade deleted");
+      setGrades(data.grades);
+      handleItemGrade(data.grades);
     } catch (error) {
       console.log(error);
     }
@@ -131,12 +102,12 @@ const Item = ({ item, handleUpdateItems, handleCourseGrade, handleUpdateItemGrad
         <p className="single-item-item">{item.item}</p>
         <p className="single-item-item">{item.percentage}%</p>
         <button
-          onClick={() => handleDelete(item._id)}
+          onClick={() => handleDeleteItem(item._id)}
           className="delete-item-btn"
         >
           Delete
         </button>
-        <p className="total-item-grade">{itemGrade} </p>
+        <p className="total-item-grade">{item.itemGrade} </p>
       </div>
 
       {gradeShow && (

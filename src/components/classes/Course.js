@@ -44,6 +44,7 @@ const Course = () => {
       const { data } = await addCourses({
         course: currentCourse,
         user: userId._id,
+        courseGrade: ""
       });
       const courses = originalCourses;
       courses.push(data);

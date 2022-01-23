@@ -16,6 +16,7 @@ import PersonIcon from "@material-ui/icons/Person";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { fetchData } from "../../actions/auth";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import ViewListRoundedIcon from "@mui/icons-material/ViewListRounded";
 
 const Header = (props) => {
   const data = useSelector((state) => state.auth.authData);
@@ -53,15 +54,6 @@ const Header = (props) => {
             <div className="brand" onClick={refresh}>
               <img src={logo} alt="logo" />
             </div>
-            {/* <div className="header-icons">
-              <ul>
-                <li className="contact-us">
-                  <Link to="/contact-us">
-                    <h3>Contact Us</h3>
-                  </Link>
-                </li>
-              </ul>
-            </div> */}
           </div>
           <div className="user-content">
             <ul>
@@ -89,6 +81,14 @@ const Header = (props) => {
                           <div className="drop-item">
                             <PersonIcon />
                             <h4 className="drop-label">View my profile</h4>
+                          </div>
+                        </Link>
+                      </Dropdown.Item>
+                      <Dropdown.Item className="grades-icon">
+                        <Link to="/grades">
+                          <div className="drop-item">
+                            <ViewListRoundedIcon />
+                            <h4 className="drop-label">Grades</h4>
                           </div>
                         </Link>
                       </Dropdown.Item>
