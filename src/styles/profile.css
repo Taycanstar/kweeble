@@ -450,7 +450,7 @@ body {
 
 @media (max-width: 580px){
   .profile-header {
-    padding-top: 60px;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -699,4 +699,104 @@ body {
 
 .edit-profile-form {
   margin-bottom: 30px;
+}
+
+.tips {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btc-tip img {
+  width:20px;
+}
+
+.doge-tip img {
+  width: 23px;
+}
+.eth-tip img {
+  width: 21.5px;
+}
+
+.profile-wallet {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+  
+}
+
+.wallet-icon {
+  border: solid 1px lightgray;
+  border-radius: 50%;
+  padding-top: 3px;
+  padding-bottom: 2px;
+  padding-right: 3px;
+  padding-left: 3px;
+
+}
+
+.wallet-button {
+  line-height: 1 !important;
+  background-color: white !important;
+  color: black !important;
+  padding-top:3px;
+  padding-bottom:3px;
+  padding-right:0px;
+  padding-left:3px;
+  border-radius: 50%;
+  border: solid 1px lightgray !important;
+}
+
+.drop-wallet-label {
+  font-size: 14px ;
+  font-weight: 500;
+    padding-left: 5px;
+}
+
+.dropdown-wallet-item {
+  font-size: 1.1rem;
+  padding-left: 5px !important;
+  padding-right: 0px !important;
+}
+
+.dropdown-wallet-item:hover {
+  background-color: #fff;
+  color: black !important;
+}
+
+.dropdown-wallet-item.dropdown-item {
+  padding-right: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.flash-message {
+  background-color: rgb(20, 59, 95);
+  width: 75%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: solid 1.8px var(--primary);
+}
+
+.flash-body {
+  width: 100%;
+  position: absolute;
+  z-index: 200;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.flash-text{
+  margin-left: 8px;
+  color:white;
+  font-weight: 500;
+}
+
+.checkmark-wallet {
+  color: #0078d7 ;
 }

@@ -26,17 +26,18 @@
     width: 100%;
     padding-left:15px;
     padding-right: 15px;
-    padding-top:3px;
+    /* padding-top:3px; */
     align-items: center;
     
 }
 
 .bot-icons {
-  padding-top: 5px;
+  /* padding-top: 5px; */
     display: flex;
     justify-content: space-between;
     cursor: pointer;
     align-items: center;
+    flex-direction: column;
 }
 
 .bot-icons a:hover {
@@ -44,6 +45,24 @@
 }
 
 .bot-icons a {
-  color: black;
+  color: #a1a1a1;
 }
+}
+
+.grades-botbar {
+  font-size: 12px;
+  color: #a1a1a1;
+  position: relative;
+  top:-10px;
+  left: -4px;
+  
+}
+
+.home-botbar {
+   font-size: 12px;
+  color: #a1a1a1;
+  position: relative;
+  top:-10px;
+  left: 3px;
+  
 }

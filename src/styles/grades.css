@@ -70,6 +70,7 @@
   color: white;
   font-weight: 600;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .single-item-item {
@@ -125,6 +126,7 @@
   padding-bottom:5px;
   padding-left:10px;
   padding-right:10px;
+  cursor: pointer;
 }
 
 .single-grade {
@@ -147,6 +149,7 @@
 }
 
 .delete-grade-btn {
+  cursor: pointer;
   width: 10%;
   margin-right: 10px;
   width: 20%;

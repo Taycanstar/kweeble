@@ -27,6 +27,9 @@ const EditProfile = () => {
     snapchat: "",
     instagram: "",
     typeOfDegree: "",
+    btcAdress: "",
+    ethAdress: "",
+    dogeAdress: "",
   
   });
 
@@ -59,6 +62,9 @@ const EditProfile = () => {
           instagram: data.instagram,
           snapchat: data.snapchat,
           typeOfDegree: data.typeOfDegree,
+          btcAddress: data.btcAddress,
+          ethAddress: data.ethAddress,
+          dogeAddress: data.dogeAddress,
           
         })
       );
@@ -124,7 +130,7 @@ const EditProfile = () => {
               </div>
               {/* donda */}
 
-              <form className="edit-profile-form"onSubmit={onSubmit}>
+              <form className="edit-profile-form" onSubmit={onSubmit}>
                 <input
                   type="file"
                   accept="image/jpeg, image/png"
@@ -192,7 +198,7 @@ const EditProfile = () => {
                   className="edit-input"
                   type="text"
                 />
-                
+
                 <h3 className="top-label">Type of Degree</h3>
                 <input
                   name="typeOfDegree"
@@ -203,7 +209,36 @@ const EditProfile = () => {
                   className="edit-input"
                   type="text"
                 />
-               
+                <h3 className="top-label">Bitcoin Address</h3>
+                <input
+                  name="btcAddress"
+                  value={data.btcAddress}
+                  onChange={(e) =>
+                    setData({ ...data, btcAddress: e.target.value })
+                  }
+                  className="edit-input"
+                  type="text"
+                />
+                <h3 className="top-label">Ethereum Address</h3>
+                <input
+                  name="ethAddress"
+                  value={data.ethAddress}
+                  onChange={(e) =>
+                    setData({ ...data, ethAddress: e.target.value })
+                  }
+                  className="edit-input"
+                  type="text"
+                />
+                <h3 className="top-label">Dogecoin Address</h3>
+                <input
+                  name="dogeAddress"
+                  value={data.dogeAddress}
+                  onChange={(e) =>
+                    setData({ ...data, dogeAddress: e.target.value })
+                  }
+                  className="edit-input"
+                  type="text"
+                />
 
                 {(() => {
                   switch (isError) {

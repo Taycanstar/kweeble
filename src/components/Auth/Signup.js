@@ -15,9 +15,10 @@ const Signup = (props) => {
     password: "",
     username: "",
     error: null,
+    
   });
 
-  const { error, name, email, password, username } = data;
+  const { error, name, email, password, username, } = data;
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -71,24 +72,7 @@ const Signup = (props) => {
       <div className="signup-card">
         <img className="form-logo" src={logo} alt="logo" />
         <form onSubmit={onSubmit} className="signup-form">
-          {/* <div className="names-form">
-            <input
-              className="signup-input namef namef2"
-              type="text"
-              name="firstName"
-              placeholder="First Name"
-              onChange={handleChange}
-              value={firstName}
-            />
-            <input
-              className="signup-input namef"
-              type="text"
-              name="lastName"
-              placeholder="Last Name"
-              onChange={handleChange}
-              value={lastName}
-            />
-          </div> */}
+         
           <input
             className="signup-input"
             type="text"
@@ -130,22 +114,7 @@ const Signup = (props) => {
             value={password}
             maxLength="38"
           />
-          {/* <div className="vision-input">
-              {!showPassword ? (
-                <div className="vision">
-                  <IconButton onClick={handleShowPassword}>
-                    <VisibilityOff />
-                  </IconButton>
-                </div>
-              ) : (
-                <div className="vision">
-                  <IconButton onClick={handleShowPassword}>
-                    <Visibility />
-                  </IconButton>
-                </div>
-              )}
-            </div>
-          </div> */}
+         
 
           {!showPassword ? (
             <div className="vision">

@@ -25,30 +25,30 @@ const Botbar = () => {
     }, 1000 * 60); //a sec = 1000, a min = 1000 * 60
   }, []);
   return (
-   <div>
-   {user && (
+    <div>
+      {user && (
         <div className="bot-bar">
-      <div className="bot-sticky">
-        <div className="container">
-          <div className="bot-inner-content">
-            <div className="bot-icons">
-              <Link to="/">
-                <HomeRoundedIcon sx={{fontSize:30}} />
-              </Link>
+          <div className="bot-sticky">
+            <div className="container">
+              <div className="bot-inner-content">
+                <div className="bot-icons">
+                  <Link to="/">
+                    <HomeRoundedIcon sx={{ fontSize: 30 }} />
+                  </Link>
+                  <p className="home-botbar">Home</p>
+                </div>
+                <div className="bot-icons">
+                  <Link to="/grades">
+                    <ViewListRoundedIcon sx={{ fontSize: 30 }} />
+                    <p className="grades-botbar">Grades</p>
+                  </Link>
+                </div>
+              </div>
             </div>
-            <div className="bot-icons">
-              <Link to="/grades">
-                <ViewListRoundedIcon sx={{fontSize: 30}} />
-              </Link>
-            </div>
-            
           </div>
         </div>
-      </div>
+      )}
     </div>
-   )}
-   </div>
- 
   );
 };
 
