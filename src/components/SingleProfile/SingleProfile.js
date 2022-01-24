@@ -6,11 +6,21 @@ import AssignmentIndOutlinedIcon from "@mui/icons-material/AssignmentIndOutlined
 import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
 import {fetchSingleProfile} from '../../actions/auth'
 import axios from "../../api/index";
-
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import Dropdown from "react-bootstrap/Dropdown";
+import btc from "../../images/btc.png";
+import doge from "../../images/doge.png";
+import eth from "../../images/eth.png";
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 
 const SingleProfile = (props) => {
    const data = useSelector((state) => state.auth.singleProfile);
     const [courses, setCourses] = useState([]);
+      const [openBtc, setOpenBtc] = useState(false);
+
+      const [openEth, setOpenEth] = useState(false);
+
+      const [openDoge, setOpenDoge] = useState(false);
 
 
 const filteredCourses =
@@ -64,16 +74,110 @@ const myId = props.match.params.id
   }));
 
   const classes = useStyles();
+    const handleBtc = () => {
+      navigator.clipboard.writeText(data.btcAddress);
+
+      setOpenBtc(!openBtc);
+      setTimeout(() => {
+        setOpenBtc((openBtc) => !openBtc);
+      }, 3000);
+    };
+
+    const handleEth = () => {
+      navigator.clipboard.writeText(data.ethAddress);
+
+      setOpenEth(!openEth);
+      setTimeout(() => {
+        setOpenEth((openEth) => !openEth);
+      }, 3000);
+    };
+
+    const handleDoge = () => {
+      navigator.clipboard.writeText(data.dogeAddress);
+
+      setOpenDoge(!openDoge);
+      setTimeout(() => {
+        setOpenDoge((openDoge) => !openDoge);
+      }, 3000);
+    };  
 
   return (
     <div className="profile-container">
       <div className="profile-header">
+        {openBtc && (
+          <div className="flash-body">
+            <div className="flash-message">
+              <CheckCircleIcon className="checkmark-wallet" />
+              <p className="flash-text">Bitcoin address link copied</p>
+            </div>
+          </div>
+        )}
+        {openEth && (
+          <div className="flash-body">
+            <div className="flash-message">
+              <CheckCircleIcon className="checkmark-wallet" />
+              <p className="flash-text">Ethereum address link copied</p>
+            </div>
+          </div>
+        )}
+
+        {openDoge && (
+          <div className="flash-body">
+            <div className="flash-message">
+              <CheckCircleIcon className="checkmark-wallet" />
+              <p className="flash-text">Dogecoin address link copied</p>
+            </div>
+          </div>
+        )}
+
+        <div className="profile-wallet">
+          <Dropdown>
+            <Dropdown.Toggle className="wallet-button">
+              <AccountBalanceWalletIcon />
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item
+                className="dropdown-wallet-item"
+                onClick={handleBtc}
+              >
+                <div className="drop-item">
+                  <div className="btc-tip">
+                    <img src={btc} alt="btc" />
+                  </div>
+
+                  <h4 className="drop-wallet-label">Bitcoin address</h4>
+                </div>
+              </Dropdown.Item>
+              <Dropdown.Item
+                className="dropdown-wallet-item"
+                onClick={handleEth}
+              >
+                <div className="drop-item">
+                  <div className="eth-tip">
+                    <img src={eth} alt="eth" />
+                  </div>
+
+                  <h4 className="drop-wallet-label">Ethereum address</h4>
+                </div>
+              </Dropdown.Item>
+              <Dropdown.Item
+                className="dropdown-wallet-item"
+                onClick={handleDoge}
+              >
+                <div className="drop-item">
+                  <div className="doge-tip">
+                    <img src={doge} alt="doge" />
+                  </div>
+
+                  <h4 className="drop-wallet-label">Dogecoin address</h4>
+                </div>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
         <Avatar src={data?.photo || "default.png"} className={classes.large} />
         <h5 className="profile-name">{data?.name}</h5>
         <h6 className="profile-username">@{data?.username}</h6>
-
-       
-       
       </div>
       <div className="profile-main">
         <div className="profile-bar">
@@ -87,53 +191,52 @@ const myId = props.match.params.id
         </div>
       </div>
       <div className="user-info-main">
-      <div className="user-first-row">
-        <div className="personal">
-          <h5>Personal</h5>
-          <p>{data?.email}</p>
-          <p>{data?.phoneNumber}</p>
-          <p>{data?.gender}</p>
-          <p>
-            {data?.birthMonth} {data?.birthDay} {data?.birthYear}
-          </p>
-        </div>
+        <div className="user-first-row">
+          <div className="personal">
+            <h5>Personal</h5>
+            <p>{data?.email}</p>
+            <p>{data?.phoneNumber}</p>
+            <p>{data?.gender}</p>
+            <p>
+              {data?.birthMonth} {data?.birthDay} {data?.birthYear}
+            </p>
+          </div>
 
-        <div className="social">
-          <h5>Social</h5>
-          <p>
-            {data.instagram ? "Insta" : null} {data?.instagram}
-          </p>
-          <p>
-            {data.snapchat ? "Snap" : null} {data?.snapchat}
-          </p>
+          <div className="social">
+            <h5>Social</h5>
+            <p>
+              {data.instagram ? "Insta" : null} {data?.instagram}
+            </p>
+            <p>
+              {data.snapchat ? "Snap" : null} {data?.snapchat}
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="user-second-row">
-        <div className="user-interests">
-          <h5>Interests</h5>
-          <p>{data?.interests}</p>
+        <div className="user-second-row">
+          <div className="user-interests">
+            <h5>Interests</h5>
+            <p>{data?.interests}</p>
+          </div>
         </div>
-      </div>
-      <div className="user-third-row">
-        <div className="studies">
-          <h5>Studies</h5>
-          <p>{data?.college} </p>
-          <p>{data?.typeOfDegree}</p>
-          <p>{data?.major}</p>
-        </div>
-        <div className="current-classes">
-          <h5>Current classes</h5>
-          <div>
-            {filteredCourses.map((course) => (
-              <div key={course._id}>
-                <p>{course.course}</p>
-              </div>
-            ))}
+        <div className="user-third-row">
+          <div className="studies">
+            <h5>Studies</h5>
+            <p>{data?.college} </p>
+            <p>{data?.typeOfDegree}</p>
+            <p>{data?.major}</p>
+          </div>
+          <div className="current-classes">
+            <h5>Current classes</h5>
+            <div>
+              {filteredCourses.map((course) => (
+                <div key={course._id}>
+                  <p>{course.course}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
     </div>
   );
 };
