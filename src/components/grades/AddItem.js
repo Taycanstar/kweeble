@@ -26,7 +26,7 @@ const AddItem = ({ filteredItems, course, getCourseGrade, updateCourses }) => {
       .map((x) => x.percentage)
       .reduce((a, b) => parseInt(a) + parseInt(b), 0);
 
-    const finalAnswer = totalGrades / totalPercentages;
+    const finalAnswer = (totalGrades / totalPercentages).toFixed(2);
 
     const { data } = await updateCourse(course, {
       courseGrade: finalAnswer,
@@ -104,7 +104,7 @@ const AddItem = ({ filteredItems, course, getCourseGrade, updateCourses }) => {
               value={formVal.item}
               required={true}
               onChange={handleChange}
-              placeholder="Item"
+              placeholder="Item (E.g. tests)"
               className="search-item-input"
               name="item"
             />

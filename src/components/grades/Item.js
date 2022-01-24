@@ -41,7 +41,9 @@ const Item = ({
         .map((x) => x.grade)
         .reduce((a, b) => parseInt(a) + parseInt(b), 0);
 
-      const finalAns = (totalGrades / (numberOfGrades * 100)) * 100;
+      const finalAns = ((totalGrades / (numberOfGrades * 100)) * 100).toFixed(
+        2
+      );
 
       console.log(finalAns, "final answer");
 
@@ -124,7 +126,7 @@ const Item = ({
               name="gradeName"
               onChange={handleChange}
               type="text"
-              placeholder="Enter task"
+              placeholder="Task (E.g. test 1)"
             />
 
             <input

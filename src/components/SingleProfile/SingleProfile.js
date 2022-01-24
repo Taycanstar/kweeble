@@ -44,7 +44,7 @@ const myId = props.match.params.id
     fetchCourses();
   }, []);
 
-  console.log(data, "data")
+  
 
 //   const displayUserInfo = () => {
 //     setUserInfo(true);
@@ -101,6 +101,7 @@ const myId = props.match.params.id
       }, 3000);
     };  
 
+   
   return (
     <div className="profile-container">
       <div className="profile-header">
@@ -130,51 +131,66 @@ const myId = props.match.params.id
           </div>
         )}
 
-        <div className="profile-wallet">
-          <Dropdown>
-            <Dropdown.Toggle className="wallet-button">
-              <AccountBalanceWalletIcon />
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item
-                className="dropdown-wallet-item"
-                onClick={handleBtc}
-              >
-                <div className="drop-item">
-                  <div className="btc-tip">
-                    <img src={btc} alt="btc" />
-                  </div>
+        {(data.btcAddress !== "" ||
+          data.ethAddress !== "" ||
+          data.dogeAddress !== "") &&
+          (data.btcAddress !== undefined ||
+            data.ethAddress !== undefined ||
+            data.dogeAddress !== undefined) && (
+            <div className="profile-wallet">
+              <Dropdown>
+                <Dropdown.Toggle className="wallet-button">
+                  <AccountBalanceWalletIcon />
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  {data.btcAddress !== undefined && data.btcAddress !== "" && (
+                    <Dropdown.Item
+                      className="dropdown-wallet-item"
+                      onClick={handleBtc}
+                    >
+                      <div className="drop-item">
+                        <div className="btc-tip">
+                          <img src={btc} alt="btc" />
+                        </div>
 
-                  <h4 className="drop-wallet-label">Bitcoin address</h4>
-                </div>
-              </Dropdown.Item>
-              <Dropdown.Item
-                className="dropdown-wallet-item"
-                onClick={handleEth}
-              >
-                <div className="drop-item">
-                  <div className="eth-tip">
-                    <img src={eth} alt="eth" />
-                  </div>
+                        <h4 className="drop-wallet-label">Bitcoin address</h4>
+                      </div>
+                    </Dropdown.Item>
+                  )}
 
-                  <h4 className="drop-wallet-label">Ethereum address</h4>
-                </div>
-              </Dropdown.Item>
-              <Dropdown.Item
-                className="dropdown-wallet-item"
-                onClick={handleDoge}
-              >
-                <div className="drop-item">
-                  <div className="doge-tip">
-                    <img src={doge} alt="doge" />
-                  </div>
+                  {data.ethAddress !== undefined && data.ethAddress !== "" && (
+                    <Dropdown.Item
+                      className="dropdown-wallet-item"
+                      onClick={handleEth}
+                    >
+                      <div className="drop-item">
+                        <div className="eth-tip">
+                          <img src={eth} alt="eth" />
+                        </div>
 
-                  <h4 className="drop-wallet-label">Dogecoin address</h4>
-                </div>
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </div>
+                        <h4 className="drop-wallet-label">Ethereum address</h4>
+                      </div>
+                    </Dropdown.Item>
+                  )}
+
+                  {data.dogeAddress !== undefined && data.dogeAddress !== "" && (
+                    <Dropdown.Item
+                      className="dropdown-wallet-item"
+                      onClick={handleDoge}
+                    >
+                      <div className="drop-item">
+                        <div className="doge-tip">
+                          <img src={doge} alt="doge" />
+                        </div>
+
+                        <h4 className="drop-wallet-label">Dogecoin address</h4>
+                      </div>
+                    </Dropdown.Item>
+                  )}
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+          )}
         <Avatar src={data?.photo || "default.png"} className={classes.large} />
         <h5 className="profile-name">{data?.name}</h5>
         <h6 className="profile-username">@{data?.username}</h6>
@@ -185,9 +201,7 @@ const myId = props.match.params.id
             <AssignmentIndOutlinedIcon />
           </div>
 
-          {/* <div className={postReel ? "selected-bar-icon" : "single-bar-icon"}>
-            <FeedOutlinedIcon onClick={displayPostReel} />
-          </div> */}
+        
         </div>
       </div>
       <div className="user-info-main">

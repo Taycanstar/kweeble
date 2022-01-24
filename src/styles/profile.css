@@ -296,8 +296,9 @@ body {
   }
 
   .user-interests{
-  background-image: linear-gradient(to right top, #00c6ff, #00b4ff, #00a1ff, #008bff, #0072ff);
+  /* background-image: linear-gradient(to right top, #00c6ff, #00b4ff, #00a1ff, #008bff, #0072ff); */
    /* background-color: #f7f5f1; */
+   background-color: #008aff;
     flex: 1;
     min-height: 80px;
     padding: 10px;
@@ -322,8 +323,9 @@ body {
   
 
   .studies {
-    background-color: #f7f5f1;
-    background-image: linear-gradient(to left bottom, #f9f871, #ffe469, #ffd166, #ffbe66, #ffac69, #ffa16c, #ff9670, #ff8c76, #ff847b, #ff7d81, #ff7689, #ff6f91);
+    /* background-color: #f7f5f1; */
+    /* background-image: linear-gradient(to left bottom, #f9f871, #ffe469, #ffd166, #ffbe66, #ffac69, #ffa16c, #ff9670, #ff8c76, #ff847b, #ff7d81, #ff7689, #ff6f91); */
+    background-color:#ff856c;
     flex:0.5;
     padding: 10px;
     /* border-bottom: 1px solid lightgray; */
@@ -602,8 +604,8 @@ body {
 
 
   .user-interests{
-  background-image: linear-gradient(to right top, #00c6ff, #00b4ff, #00a1ff, #008bff, #0072ff);
-   /* background-color: #f7f5f1; */
+  /* background-image: linear-gradient(to right top, #00c6ff, #00b4ff, #00a1ff, #008bff, #0072ff); */
+   background-color: #008aff;
     min-height: 80px;
     padding: 10px;
     
@@ -628,7 +630,8 @@ body {
 
   .studies {
     /* background-image: linear-gradient(to left bottom, #f9f871, #ffe469, #ffd166, #ffbe66, #ffac69, #ffa16c, #ff9670, #ff8c76, #ff847b, #ff7d81, #ff7689, #ff6f91); */
-     background-color: #f7f5f1;
+     /* background-color: #f7f5f1; */
+     background-color:#ff856c;
  color: linear-gradient(to left bottom, #f9f871, #ffe469, #ffd166, #ffbe66, #ffac69, #ffa16c, #ff9670, #ff8c76, #ff847b, #ff7d81, #ff7689, #ff6f91);
     flex:0.5;
     padding: 10px;
