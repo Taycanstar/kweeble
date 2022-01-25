@@ -5,6 +5,7 @@ body {
 }
 .profile-content {
   padding-top: 60px;
+  margin-bottom: 50px;
   /* padding-left: 25px;
   padding-right: 25px; */
   display: flex;
@@ -430,7 +431,7 @@ body {
 
   .profile-content {
     display: flex;
-
+     margin-bottom: 50px;
     padding-left: 0px;
     padding-right: 0px;
     width: 100%;
