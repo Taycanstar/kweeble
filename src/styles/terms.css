@@ -1,5 +1,6 @@
 .priv-main {
   margin-bottom: 50px;
+  overflow-x: hidden;
 }
 .priv-title {
   background-color: black;
