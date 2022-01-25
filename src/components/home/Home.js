@@ -4,6 +4,7 @@ import MainText from "./MainText";
 
 const Home = () => {
   return (
+    
     <div className="home-content">
       <MainText />
     </div>
