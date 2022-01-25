@@ -125,7 +125,7 @@ const ResultCard = ({ person }) => {
                   <h3 className="card-display-info-media">
                     <strong>{person.instagram}</strong>
                   </h3>
-                  <img className="media-icon" src={snap} alt="instagram" />
+                  <img className="media-icon-snap" src={snap} alt="instagram" />
                   <h3 className="card-display-info-media">
                     <strong>{person.snapchat}</strong>
                   </h3>
@@ -134,7 +134,7 @@ const ResultCard = ({ person }) => {
             case "snap":
               return (
                 <div className="social-icon1">
-                  <img className="media-icon" src={snap} alt="snap" />
+                  <img className="media-icon-snap" src={snap} alt="snap" />
                   <h3 className="card-display-info-media">
                     <strong>{person.snapchat}</strong>
                   </h3>

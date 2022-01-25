@@ -169,6 +169,12 @@
   height: 20px;
   margin-right: 5px;
 }
+.media-icon-snap {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-left: 3px 
+}
 
 .social-icon1 {
   display: flex;
@@ -274,7 +280,7 @@
     font-size: 0.8rem;
     font-weight: normal;
     margin-bottom: 5px;
-    margin-right: 5px;
+    margin-right: 8px;
   }
   .card-display-info {
     font-size: 0.8rem;
