@@ -209,7 +209,7 @@ const myId = props.match.params.id
             <h5>Personal</h5>
             <p>{data?.email}</p>
             <p>{data?.phoneNumber}</p>
-            <p>{data?.gender}</p>
+            {/* <p>{data?.gender}</p> */}
             <p>
               {data?.birthMonth} {data?.birthDay} {data?.birthYear}
             </p>
