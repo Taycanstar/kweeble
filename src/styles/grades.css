@@ -6,7 +6,8 @@
 .grades-name-header {
      background-color: #8d9b9e;
      background-color: var(--secondary);
-   background-image: linear-gradient(to right top, #00c6ff, #00b4ff, #00a1ff, #008bff, #0072ff);
+   /* background-image: linear-gradient(to right top, #00c6ff, #00b4ff, #00a1ff, #008bff, #0072ff); */
+   background-color: #008aff;
   width: 100%;
   height: 100%;
   color: white;
