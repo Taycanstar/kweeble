@@ -100,6 +100,7 @@ const myId = props.match.params.id
         setOpenDoge((openDoge) => !openDoge);
       }, 3000);
     };  
+    console.log(data.btcAddress);
 
    
   return (
@@ -200,8 +201,6 @@ const myId = props.match.params.id
           <div className={data ? "selected-bar-icon" : "single-bar-icon"}>
             <AssignmentIndOutlinedIcon />
           </div>
-
-        
         </div>
       </div>
       <div className="user-info-main">
@@ -215,23 +214,28 @@ const myId = props.match.params.id
               {data?.birthMonth} {data?.birthDay} {data?.birthYear}
             </p>
           </div>
+          {data.interests !== undefined && data.interests !== "" && (
+            <div className="user-second-row">
+              <div className="user-interests">
+                <h5>Interests</h5>
+                <p>{data?.interests}</p>
+              </div>
+            </div>
+          )}
 
-          <div className="social">
-            <h5>Social</h5>
-            <p>
-              {data.instagram ? "Insta" : null} {data?.instagram}
-            </p>
-            <p>
-              {data.snapchat ? "Snap" : null} {data?.snapchat}
-            </p>
-          </div>
+          {data.social !== undefined && data.social !== "" && (
+            <div className="social">
+              <h5>Social</h5>
+              <p>
+                {data.instagram ? "Insta" : null} {data?.instagram}
+              </p>
+              <p>
+                {data.snapchat ? "Snap" : null} {data?.snapchat}
+              </p>
+            </div>
+          )}
         </div>
-        <div className="user-second-row">
-          <div className="user-interests">
-            <h5>Interests</h5>
-            <p>{data?.interests}</p>
-          </div>
-        </div>
+
         <div className="user-third-row">
           <div className="studies">
             <h5>Studies</h5>
@@ -239,6 +243,7 @@ const myId = props.match.params.id
             <p>{data?.typeOfDegree}</p>
             <p>{data?.major}</p>
           </div>
+          {data.course}
           <div className="current-classes">
             <h5>Current classes</h5>
             <div>

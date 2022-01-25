@@ -37,7 +37,7 @@ const ResultCard = ({ person }) => {
 
   const [isMedia, setIsMedia] = useState("");
 
-  console.log(person, "person")
+  
 
   useEffect(() => {
     if (person.snapchat === undefined && person.instagram === undefined) {
@@ -53,9 +53,8 @@ const ResultCard = ({ person }) => {
       return null;
     }
   }, [isMedia]);
-  console.log(isMedia);
-  console.log(person.snapchat);
-  // console.log(person.instagram);
+ 
+  
   return (
     <div className="result-card">
       {/* To make this work either:

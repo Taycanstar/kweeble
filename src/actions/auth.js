@@ -46,7 +46,7 @@ export const fetchData = () => async (dispatch) => {
 export const fetchSingleProfile = (id) => async (dispatch) => {
   try {
     const { data } = await api.fetchSingleProfile(id);
-    console.log(data, "single profile")
+    
     dispatch({ type: SINGLE_PROFILE, data });
   } catch (error) {
     console.log("hello error==>>", error.response.data);
