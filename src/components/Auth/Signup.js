@@ -72,7 +72,6 @@ const Signup = (props) => {
       <div className="signup-card">
         <img className="form-logo" src={logo} alt="logo" />
         <form onSubmit={onSubmit} className="signup-form">
-         
           <input
             className="signup-input"
             type="text"
@@ -114,7 +113,6 @@ const Signup = (props) => {
             value={password}
             maxLength="38"
           />
-         
 
           {!showPassword ? (
             <div className="vision">
@@ -135,7 +133,7 @@ const Signup = (props) => {
           <div className="birthday-wrapper">
             <div className="birthday">
               <select
-              className="signup-select"
+                className="signup-select"
                 name="birthDay"
                 id="birth_day"
                 onChange={(e) => setBirthDay(e.target.value)}
@@ -143,6 +141,7 @@ const Signup = (props) => {
                 <option value="" selected disabled hidden>
                   Day
                 </option>
+                <option value="null">null</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -177,7 +176,7 @@ const Signup = (props) => {
               </select>
 
               <select
-              className="signup-select"
+                className="signup-select"
                 name="birthMonth"
                 id="birth_month"
                 onChange={(e) => setBirthMonth(e.target.value)}
@@ -185,6 +184,7 @@ const Signup = (props) => {
                 <option value="" selected disabled hidden>
                   Month
                 </option>
+                <option value="null">null</option>
                 <option value="January">Jan</option>
                 <option value="February">Feb</option>
                 <option value="March">Mar</option>
@@ -200,7 +200,7 @@ const Signup = (props) => {
               </select>
 
               <select
-              className="signup-select"
+                className="signup-select"
                 name="birthYear"
                 id="birth_year"
                 onChange={(e) => setBirthYear(e.target.value)}
@@ -208,6 +208,8 @@ const Signup = (props) => {
                 <option value="" selected disabled hidden>
                   Year
                 </option>
+                <option value="null">null</option>
+                <option value="2022">2022</option>
                 <option value="2021">2021</option>
                 <option value="2020">2020</option>
                 <option value="2019">2019</option>
@@ -332,7 +334,7 @@ const Signup = (props) => {
           </label>
           <div className="gender">
             <select
-            className="signup-select"
+              className="signup-select"
               name="gender"
               id="gender"
               onChange={(e) => setGender(e.target.value)}
@@ -351,7 +353,7 @@ const Signup = (props) => {
           </label>
           <div className="colleges">
             <select
-            className="signup-select"
+              className="signup-select"
               name="college"
               id="college"
               onChange={(e) => setCollege(e.target.value)}

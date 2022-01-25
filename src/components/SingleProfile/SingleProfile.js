@@ -14,6 +14,7 @@ import eth from "../../images/eth.png";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 
 const SingleProfile = (props) => {
+  const currentYear = new Date().getFullYear()
    const data = useSelector((state) => state.auth.singleProfile);
     const [courses, setCourses] = useState([]);
       const [openBtc, setOpenBtc] = useState(false);
@@ -21,6 +22,7 @@ const SingleProfile = (props) => {
       const [openEth, setOpenEth] = useState(false);
 
       const [openDoge, setOpenDoge] = useState(false);
+      const [personAge, setPersonAge] = useState(null)
 
 
 const filteredCourses =
@@ -210,9 +212,16 @@ const myId = props.match.params.id
             <p>{data?.email}</p>
             <p>{data?.phoneNumber}</p>
             {/* <p>{data?.gender}</p> */}
-            <p>
-              {data?.birthMonth} {data?.birthDay} {data?.birthYear}
-            </p>
+            {data?.birthDay !== "null" &&
+              data?.birthMonth !== "null" &&
+              data?.birthYear !== "null" && (
+                <div>
+                <p>
+                  {data?.birthMonth} {data?.birthDay} {data?.birthYear}
+                </p>
+                
+                </div>
+              )}
           </div>
           {data.interests !== undefined && data.interests !== "" && (
             <div className="user-second-row">

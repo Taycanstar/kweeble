@@ -41,10 +41,16 @@ const UserInfo = () => {
           <h5>Personal</h5>
           <p>{data?.email}</p>
           <p>{data?.phoneNumber}</p>
-          <p>{data?.gender}</p>
-          <p>
-            {data?.birthMonth} {data?.birthDay} {data?.birthYear}
-          </p>
+          {/* <p>{data?.gender}</p> */}
+          {data?.birthDay !== "null" &&
+            data?.birthMonth !== "null" &&
+            data?.birthYear !== "null" && (
+              <div>
+                <p>
+                  {data?.birthMonth} {data?.birthDay} {data?.birthYear}
+                </p>
+              </div>
+            )}
         </div>
         <div className="user-second-row">
           <div className="user-interests">
