@@ -1,87 +1,82 @@
-
+.priv-main {
+  margin-bottom: 50px;
+}
 .priv-title {
-  
-    background-color:black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .whatevr {
-      padding-bottom: 50px;
-     
+  padding-bottom: 50px;
 }
 
 .wht {
-     color: white !important;
-     padding-bottom: 10px;
+  color: white !important;
+  padding-bottom: 10px;
 }
 
 .priv-title img {
-    margin-top: 5px;
-    width: 50%;
-    max-height: 250px;
-    object-fit:cover;
+  margin-top: 5px;
+  width: 50%;
+  max-height: 250px;
+  object-fit: cover;
 }
 
 .priv-title h1 {
-    color: white;
-    text-align: center;
-    font-weight: 600;
-    font-size: 3rem;
-    padding-left: 200px;
-    padding-right: 200px;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  font-size: 3rem;
+  padding-left: 200px;
+  padding-right: 200px;
 }
-
 
 .priv-main-par p {
-    padding-top: 20px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: .12px;
-    color: #14171a;
-    word-break: break-word;
+  padding-top: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.12px;
+  color: #14171a;
+  word-break: break-word;
 }
 
-@media (max-width:580px) {
-.priv-main-par {
+@media (max-width: 580px) {
+  .priv-main-par {
     padding-left: 50px !important;
-    padding-right: 50px  !important;
-}
+    padding-right: 50px !important;
+  }
 }
 
 .priv-main-par h5 {
-    font-weight: 700;
-    font-size: 21px;
-    line-height: 28px;
-    letter-spacing: .12px;
-    padding-top: 25px;
-
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 28px;
+  letter-spacing: 0.12px;
+  padding-top: 25px;
 }
 
 .hc-title {
-  
-    background-color: var(--primary);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
 .hc-title img {
-    margin-top: 5px;
-    width: 60%;
-    max-height: 250px;
-    object-fit:cover;
+  margin-top: 5px;
+  width: 60%;
+  max-height: 250px;
+  object-fit: cover;
 }
 
 .hc-title h1 {
-    color: white;
-    text-align: center;
-    font-weight: 600;
-    font-size: 3rem;
-    padding-left: 200px;
-    padding-right: 200px;
-    padding-bottom: 20px;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  font-size: 3rem;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 20px;
 }
