@@ -122,6 +122,19 @@ const MainText = () => {
                       }
                     }
 
+                       if (person.gradeLevel !== undefined) {
+                         if (query === "") {
+                           return null;
+                         } else if (
+                           person.gradeLevel
+                             .toLowerCase()
+                             .includes(query.toLocaleLowerCase()) &&
+                           person.college === college
+                         ) {
+                           return person;
+                         }
+                       }
+
                     if (person.major !== undefined) {
                       if (query === "") {
                         return null;

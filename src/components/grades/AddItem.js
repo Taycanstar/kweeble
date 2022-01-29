@@ -83,7 +83,7 @@ const AddItem = ({ filteredItems, course, getCourseGrade, updateCourses }) => {
       const { data } = await addItem(serverData, course);
       console.log(data, "item added");
       setItems(data);
-      handleCourseGrade(data);
+      // handleCourseGrade(data);
 
       setFormVal({
         item: "",

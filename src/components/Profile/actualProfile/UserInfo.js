@@ -74,8 +74,9 @@ const UserInfo = () => {
         <div className="studies">
           <h5>Studies</h5>
           <p>{data?.college} </p>
-          <p>{data?.typeOfDegree}</p>
+
           <p>{data?.major}</p>
+          <p>{data?.gradeLevel}</p>
         </div>
         <div className="current-classes">
           <h5>Current classes</h5>

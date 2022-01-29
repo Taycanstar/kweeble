@@ -4,7 +4,7 @@ import blogo from "../../images/logo3.jpg";
 
 const HelpCenter = () => {
   return (
-    <div className="priv-main">
+    <div className="hc-main">
       <div className="hc-title">
         <img src={blogo} alt="black kweeble" />
         <h1>Help Center</h1>

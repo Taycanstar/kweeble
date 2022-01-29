@@ -97,6 +97,12 @@ const ResultCard = ({ person }) => {
           </h3>
         )}
 
+        {person.gradeLevel && (
+          <h3 className="card-display-info">
+            <strong>Grade Level&nbsp;&nbsp;</strong> {person.gradeLevel}
+          </h3>
+        )}
+
         {person.interests && (
           <h3 className="card-display-info">
             <strong>Interests&nbsp;&nbsp;</strong> {person.interests}

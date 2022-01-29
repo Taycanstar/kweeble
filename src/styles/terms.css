@@ -1,6 +1,7 @@
-.priv-main {
+.hc-main {
   margin-bottom: 50px;
   overflow-x: hidden;
+  height: 100vh;
 }
 .priv-title {
   background-color: black;

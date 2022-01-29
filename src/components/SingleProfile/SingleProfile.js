@@ -216,10 +216,9 @@ const myId = props.match.params.id
               data?.birthMonth !== "null" &&
               data?.birthYear !== "null" && (
                 <div>
-                <p>
-                  {data?.birthMonth} {data?.birthDay} {data?.birthYear}
-                </p>
-                
+                  <p>
+                    {data?.birthMonth} {data?.birthDay} {data?.birthYear}
+                  </p>
                 </div>
               )}
           </div>
@@ -249,8 +248,9 @@ const myId = props.match.params.id
           <div className="studies">
             <h5>Studies</h5>
             <p>{data?.college} </p>
-            <p>{data?.typeOfDegree}</p>
+            
             <p>{data?.major}</p>
+            <p>{data?.gradeLevel}</p>
           </div>
           {data.course}
           <div className="current-classes">

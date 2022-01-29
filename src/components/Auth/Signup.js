@@ -104,29 +104,34 @@ const Signup = (props) => {
             value={username}
           />
           {/* <div className="password-input"> */}
-          <input
-            className="signup-input"
-            type={showPassword ? "text" : "password"}
-            name="password"
-            placeholder="Password"
-            onChange={handleChange}
-            value={password}
-            maxLength="38"
-          />
+          <div className="pass-vision">
+            <input
+              className="signup-input"
+              type={showPassword ? "text" : "password"}
+              name="password"
+              placeholder="Password"
+              onChange={handleChange}
+              value={password}
+              maxLength="38"
+            />
 
-          {!showPassword ? (
-            <div className="vision">
-              <IconButton onClick={handleShowPassword}>
-                <Visibility />
-              </IconButton>
-            </div>
-          ) : (
-            <div className="vision">
-              <IconButton onClick={handleShowPassword}>
-                <VisibilityOff />
-              </IconButton>
-            </div>
-          )}
+            {!showPassword ? (
+              <div className="vision">
+                <div className="vision-in">
+                  <IconButton onClick={handleShowPassword}>
+                    <Visibility />
+                  </IconButton>
+                </div>
+              </div>
+            ) : (
+              <div className="vision">
+                <IconButton onClick={handleShowPassword}>
+                  <VisibilityOff />
+                </IconButton>
+              </div>
+            )}
+          </div>
+
           <label className="birthday-label" htmlFor="birthday">
             Date of birth
           </label>
@@ -329,7 +334,7 @@ const Signup = (props) => {
               </select>
             </div>
           </div>
-          <label className="gender-label" htmlFor="gender">
+          {/* <label className="gender-label" htmlFor="gender">
             Gender
           </label>
           <div className="gender">
@@ -345,9 +350,9 @@ const Signup = (props) => {
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Other">Other</option>
-              {/* <option value="Polk State College">Polk State College</option> */}
-            </select>
-          </div>
+              
+            </select> */}
+          {/* </div> */}
           <label className="college-label" htmlFor="college">
             College
           </label>
