@@ -216,6 +216,9 @@ html {
     margin-left: 3px;
     color: teal;
   }
+  .user-info-card {
+    max-width: 280px;
+  }
 
   .value-prop {
     display: flex;
