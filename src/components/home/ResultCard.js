@@ -133,7 +133,7 @@ const ResultCard = ({ person }) => {
                   </h3>
                   <img className="media-icon-snap" src={snap} alt="instagram" />
                   <h3 className="card-display-info-media">
-                    <strong>{person.snapchat}</strong>
+                    <strong className="snap-card">{person.snapchat}</strong>
                   </h3>
                 </div>
               );
