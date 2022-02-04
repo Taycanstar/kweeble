@@ -102,7 +102,8 @@ const myId = props.match.params.id
         setOpenDoge((openDoge) => !openDoge);
       }, 3000);
     };  
-    console.log(data.btcAddress);
+   
+  
 
    
   return (
@@ -248,21 +249,23 @@ const myId = props.match.params.id
           <div className="studies">
             <h5>Studies</h5>
             <p>{data?.college} </p>
-            
+
             <p>{data?.major}</p>
             <p>{data?.gradeLevel}</p>
           </div>
-          {data.course}
-          <div className="current-classes">
-            <h5>Current classes</h5>
-            <div>
-              {filteredCourses.map((course) => (
-                <div key={course._id}>
-                  <p>{course.course}</p>
-                </div>
-              ))}
+          {/* {data.course} */}
+          {filteredCourses.length > 0 && (
+            <div className="current-classes">
+              <h5>Current classes</h5>
+              <div>
+                {filteredCourses.map((course) => (
+                  <div key={course._id}>
+                    <p>{course.course}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

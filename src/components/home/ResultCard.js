@@ -42,10 +42,11 @@ const ResultCard = ({ person }) => {
   useEffect(() => {
     if (person.snapchat === undefined && person.instagram === undefined) {
       setIsMedia("");
-    } else if (person.snapchat === " " && person.instagram === "") {
-    } else if (person.snapchat === "" && person.instagram !== "") {
+    } else if (person.snapchat === "" && person.instagram === "") {
+      setIsMedia("");
+    } else if (person.instagram !== "" && (person.snapchat === "" || person.snapchat === undefined )  ) {
       setIsMedia("insta");
-    } else if (person.snapchat !== "" && person.instagram === "") {
+    } else if (person.snapchat !== "" && (person.instagram === "" || person.instagram === undefined)) {
       setIsMedia("snap");
     } else if (person.snapchat !== "" && person.instagram !== "") {
       setIsMedia("both");
@@ -53,6 +54,8 @@ const ResultCard = ({ person }) => {
       return null;
     }
   }, [isMedia]);
+
+  
  
   
   return (
@@ -160,12 +163,7 @@ const ResultCard = ({ person }) => {
           }
         })()}
 
-        {/* <div className="social-icons">
-          <img className="media-icon" src={snap} alt="snap" />
-          <h3 className="card-display-info">
-            <strong>@dimi</strong>
-          </h3>
-        </div> */}
+       
       </div>
     </div>
   );

@@ -30,12 +30,21 @@ body {
 
 .profile-container {
   padding-bottom: 25px;
+  background-color: #f7f5f1;
 }
 
 .edit-avatar {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+}
+
+.profile-header {
+  background-color: white;
+}
+
+.profile-bar {
+  background-color: white;
 }
 
 .profile-card {
@@ -238,7 +247,7 @@ body {
 
   .user-info-main {
     display: flex;
-    
+    background-color: #f7f5f1;
     
    
     flex-direction: column;

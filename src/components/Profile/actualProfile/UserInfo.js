@@ -34,6 +34,8 @@ const UserInfo = () => {
     fetchCourses();
   }, []);
 
+  
+
   return (
     <div className="user-info-main">
       <div className="user-first-row">
@@ -78,16 +80,18 @@ const UserInfo = () => {
           <p>{data?.major}</p>
           <p>{data?.gradeLevel}</p>
         </div>
-        <div className="current-classes">
-          <h5>Current classes</h5>
-          <div>
-            {filteredCourses.map((course) => (
-              <div key={course._id}>
-                <p>{course.course}</p>
-              </div>
-            ))}
+        {filteredCourses.length > 0 && (
+          <div className="current-classes">
+            <h5>Current classes</h5>
+            <div>
+              {filteredCourses.map((course) => (
+                <div key={course._id}>
+                  <p>{course.course}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

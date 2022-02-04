@@ -21,7 +21,7 @@ const MainText = () => {
         } else {
           setResults([]);
         }
-        console.log(data);
+        
       });
   };
   

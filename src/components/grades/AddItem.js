@@ -17,16 +17,20 @@ const AddItem = ({ filteredItems, course, getCourseGrade, updateCourses }) => {
   };
 
   const handleCourseGrade = async (myItems) => {
-    console.log("items in course grade ===>", myItems);
+    // console.log("items in course grade ===>", myItems);
+
+    
     const totalGrades = myItems
-      .map((x) => x.percentage * x.itemGrade)
+    .filter((x) => x.grades.length > 0 )
+      .map((x) => x.percentage  * x.itemGrade)
       .reduce((a, b) => parseInt(a) + parseInt(b), 0);
 
     const totalPercentages = myItems
+      .filter((x) => x.grades.length > 0)
       .map((x) => x.percentage)
       .reduce((a, b) => parseInt(a) + parseInt(b), 0);
 
-    const finalAnswer = (totalGrades / totalPercentages).toFixed(2);
+    let finalAnswer = (totalGrades / totalPercentages).toFixed(2);
 
     const { data } = await updateCourse(course, {
       courseGrade: finalAnswer,
@@ -81,7 +85,7 @@ const AddItem = ({ filteredItems, course, getCourseGrade, updateCourses }) => {
       };
 
       const { data } = await addItem(serverData, course);
-      console.log(data, "item added");
+      // console.log(data, "item added");
       setItems(data);
       // handleCourseGrade(data);
 
@@ -93,6 +97,8 @@ const AddItem = ({ filteredItems, course, getCourseGrade, updateCourses }) => {
       console.log(error);
     }
   };
+
+  console.log(items)
 
   return (
     <div>
