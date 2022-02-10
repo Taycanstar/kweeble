@@ -113,7 +113,12 @@ const Item = ({
           >
             Delete
           </button>
-          <p className="total-item-grade">{item.itemGrade} </p>
+          {isNaN(item.itemGrade) === false ? (
+              <p className="total-item-grade">{item.itemGrade} </p>
+          ) : (
+            null
+          )}
+          
         </div>
       </div>
 

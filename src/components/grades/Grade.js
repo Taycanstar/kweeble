@@ -52,7 +52,12 @@ console.log(course.grade);
     >
       <div key={course._id} className="course-page-list" onClick={openItem}>
         <h5 className="single-class-item">{course.course}</h5>
-        <h5 className="grade-of-class">{course.courseGrade}</h5>
+        {isNaN(course.courseGrade) === false ? (
+            <h5 className="grade-of-class">{course.courseGrade}</h5>
+        ) : (
+          null
+        ) }
+        
       </div>
       {itemIsOpen && (
         <AddItem updateCourses={updateCourses} course={course._id} />
