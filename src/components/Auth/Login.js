@@ -9,16 +9,38 @@ const Login = (props) => {
   const [data, setData] = useState({
     email: "",
     password: "",
+    username: "",
     error: null,
   });
 
-  const { email, password, error } = data;
+
+  const { email, password, error, username } = data;
 
   const history = createBrowserHistory({ forceRefresh: true });
-
+ 
   const handleChange = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
+    
+    if(e.target.value.includes("@")) {
+      setData({ ...data, email: e.target.value });
+    } else {
+      setData({ ...data, username: e.target.value });
+    }
+  
+
+    
+    
+   
   };
+    const handleChangePassword = (e) => {
+     
+
+       setData({ ...data, [e.target.name]: e.target.value });
+      
+    };
+
+  
+
+  
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +49,7 @@ const Login = (props) => {
       setData({ ...data, error: null });
       const res = await axios.post(
         "/auth/login",
-        { email, password },
+        { email, password, username },
         {
           headers: {
             "Content-Type": "application/json",
@@ -36,6 +58,7 @@ const Login = (props) => {
       );
       localStorage.setItem("token", res.data.token);
       history.push("/");
+
     } catch (error) {
       setData({ ...data, error: error.response.data.error });
     }
@@ -46,10 +69,11 @@ const Login = (props) => {
         <img className="form-logo" src={logo} alt="logo" />
         <form onSubmit={onSubmit} className="signup-form">
           <input
+            id="top-login-input"
             className="signup-input"
-            type="email"
-            name="email"
-            placeholder="Email"
+            type="text"
+            // name={firstInput}
+            placeholder="Email or username"
             onChange={handleChange}
           />
 
@@ -58,7 +82,7 @@ const Login = (props) => {
             type="password"
             name="password"
             placeholder="Password"
-            onChange={handleChange}
+            onChange={handleChangePassword}
           />
           {error ? <p className="text-danger"> {error}</p> : null}
 
