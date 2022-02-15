@@ -37,7 +37,7 @@
 .signup-card {
   display: flex;
   flex-direction: column;
-  width: 532px;
+  width: 100%;
   height: 80%;
   padding-left: 99px;
   padding-right: 99px;
