@@ -35,7 +35,7 @@ const MainText = () => {
       {user === null ? (
         <div className="value-prop">
           <div className="main-title">
-            <h1>Experience the college directory and grade asistant</h1>
+            <h1>Experience the college directory and grade tracker</h1>
           </div>
           <div className="secondary-title">
             <h5>
