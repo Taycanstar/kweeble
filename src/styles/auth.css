@@ -41,7 +41,7 @@
 .signup-card {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90vw;
   height: 80%;
   padding-left: 99px;
   padding-right: 99px;
