@@ -1,5 +1,5 @@
 .signup-content {
-  padding-top: 70px;
+  padding-top: 60px;
   padding-left: 30px;
   padding-right: 30px;
   display: flex;
@@ -68,7 +68,7 @@
   align-items: center;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
   border-radius: 8px;
-  margin-top: 15px;
+  margin-top: 5px;
   background-color: white ;
 }
 }
