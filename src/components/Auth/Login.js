@@ -65,7 +65,7 @@ const Login = (props) => {
   };
   return (
     <div className="signup-content">
-      <div className="signup-card">
+      <div className="login-card">
         <img className="form-logo" src={logo} alt="logo" />
         <form onSubmit={onSubmit} className="signup-form">
           <input
