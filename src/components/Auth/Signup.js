@@ -19,7 +19,7 @@ const Signup = (props) => {
     error: null,
     
   });
-  const invalidChars = "!@#$%^&*()+=[]\\';,/{}|\":<>?";
+  const invalidChars = "!@#$%^&*()+=[]\\';,/{}|\":<>?€£¥";
   const upd = invalidChars.split('')
  if(upd > 0){
    upd.push(" ")
