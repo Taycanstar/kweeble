@@ -5,6 +5,7 @@ import axios from "../../api/index";
 import { Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
+
 const Login = (props) => {
   const [data, setData] = useState({
     email: "",
@@ -24,11 +25,7 @@ const Login = (props) => {
       setData({ ...data, email: e.target.value });
     } else {
       setData({ ...data, username: e.target.value });
-    }
-  
-
-    
-    
+    } 
    
   };
     const handleChangePassword = (e) => {
@@ -63,6 +60,8 @@ const Login = (props) => {
       setData({ ...data, error: error.response.data.error });
     }
   };
+
+
   return (
     <div className="signup-content">
       <div className="login-card">

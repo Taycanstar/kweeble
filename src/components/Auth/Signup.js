@@ -6,6 +6,8 @@ import axios from "../../api/index";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import { IconButton } from "@material-ui/core";
 import { Visibility } from "@material-ui/icons";
+import $ from 'jquery'
+import { useEffect } from "react";
 
 const Signup = (props) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -17,6 +19,13 @@ const Signup = (props) => {
     error: null,
     
   });
+  const invalidChars = "!@#$%^&*()+=[]\\';,/{}|\":<>?";
+  const upd = invalidChars.split('')
+ if(upd > 0){
+   upd.push(" ")
+ }
+
+  const [specialCharError, setSpecialCharError] = useState(false)
 
   const { error, name, email, password, username, } = data;
 
@@ -24,33 +33,65 @@ const Signup = (props) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
+
+
+   const usernameChange = (e) => {
+     if (e.currentTarget.value.includes(" ")) {
+       e.currentTarget.value = e.currentTarget.value.replace(/\s/g, "");
+     }
+     if (upd.some((char) => e.target.value.includes(char))) {
+       setSpecialCharError(true);
+       
+       
+     } else {
+       setSpecialCharError(false);
+       
+     }
+     setData({ ...data, [e.target.name]: e.target.value });
+   };
+
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      setData({ ...data, error: null });
-      setCollege({ ...college });
-      setGender({ ...gender });
-      setBirthDay({ ...birthDay });
-      setBirthMonth({ ...birthMonth });
-      setBirthYear({ ...birthYear });
-      
-    
-      await axios.post(
-        "/auth/register",
-        { name, email, password, college, gender, birthDay, birthMonth, birthYear, username},
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+    if(specialCharError === false) {
+            try {
+              setData({ ...data, error: null });
+              setCollege({ ...college });
+              setGender({ ...gender });
+              setBirthDay({ ...birthDay });
+              setBirthMonth({ ...birthMonth });
+              setBirthYear({ ...birthYear });
 
-      props.history.push("/login");
-    } catch (error) {
-      setData({ ...data, error: error.response.data.error });
-      console.log(error);
-    }
+              await axios.post(
+                "/auth/register",
+                {
+                  name,
+                  email,
+                  password,
+                  college,
+                  gender,
+                  birthDay,
+                  birthMonth,
+                  birthYear,
+                  username,
+                },
+                {
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                }
+              );
+
+              props.history.push("/login");
+            } catch (error) {
+              setData({ ...data, error: error.response.data.error });
+              console.log(error);
+            }
+            
+    } 
+
+
   };
 
   const [college, setCollege] = useState([]);
@@ -96,14 +137,23 @@ const Signup = (props) => {
           />
 
           <input
-            className="signup-input"
+            id="username"
+            className={specialCharError ? "error-input" : "signup-input"}
             type="text"
             name="username"
             placeholder="Username"
-            onChange={handleChange}
+            onChange={usernameChange}
             value={username}
           />
-          {/* <div className="password-input"> */}
+          {specialCharError && (
+            <p
+              style={{ paddingBottom: "8px" }}
+              id="username-error"
+              className="text-danger"
+            >
+              Your username can only contain letters, numbers,  ' . ' , ' - ' and '_'
+            </p>
+          )}
           <div className="pass-vision">
             <input
               className="signup-input"
@@ -372,6 +422,10 @@ const Signup = (props) => {
           </div>
 
           {error ? <p className="text-danger"> {error}</p> : null}
+
+          {/* {signUpError === true ? (
+            <p className="text-danger"> Invalid data</p>
+          ) : null} */}
 
           <button className="signup-form-btn" type="submit">
             Sign up
