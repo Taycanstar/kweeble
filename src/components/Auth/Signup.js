@@ -6,7 +6,6 @@ import axios from "../../api/index";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import { IconButton } from "@material-ui/core";
 import { Visibility } from "@material-ui/icons";
-import $ from 'jquery'
 import { useEffect } from "react";
 
 const Signup = (props) => {

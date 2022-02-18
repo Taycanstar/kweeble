@@ -60,16 +60,17 @@ const UserInfo = () => {
             <p>{data?.interests}</p>
           </div>
         </div>
-
-        <div className="social">
-          <h5>Social</h5>
-          <p>
-            {data.instagram ? "Insta" : null} {data?.instagram}
-          </p>
-          <p>
-            {data.snapchat ? "Snap" : null} {data?.snapchat}
-          </p>
-        </div>
+        {data.social !== undefined && data.social !== "" && (
+          <div className="social">
+            <h5>Social</h5>
+            <p>
+              {data.instagram ? "Insta" : null} {data?.instagram}
+            </p>
+            <p>
+              {data.snapchat ? "Snap" : null} {data?.snapchat}
+            </p>
+          </div>
+        )}
       </div>
 
       <div className="user-third-row">
