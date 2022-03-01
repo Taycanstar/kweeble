@@ -103,7 +103,9 @@ const Item = ({
       <div className="listOfItems" onClick={showGrade}>
         <div className="item-first">
           <p className="single-item-item">{item.item}</p>
-          <p className="single-item-item">{item.percentage}%</p>
+          <div className="single-item-item-p">
+            <p>{item.percentage}%</p>
+          </div>
         </div>
 
         <div className="item-second">
@@ -114,11 +116,8 @@ const Item = ({
             Delete
           </button>
           {isNaN(item.itemGrade) === false ? (
-              <p className="total-item-grade">{item.itemGrade} </p>
-          ) : (
-            null
-          )}
-          
+            <p className="total-item-grade">{item.itemGrade} </p>
+          ) : null}
         </div>
       </div>
 

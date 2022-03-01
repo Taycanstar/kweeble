@@ -83,6 +83,18 @@
   align-items: center;
   font-weight: 500;
   background-color: var(--secondary);
+  margin-right: 10px;
+}
+.single-item-item-p {
+  width: 100%;
+  font-size: 1rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  background-color: var(--secondary);
+  justify-content: center;
+  text-align: center;
 }
 
 .items-list {
