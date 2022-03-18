@@ -6,6 +6,7 @@ import snap from "../../images/sn.png";
 import {Link} from 'react-router-dom';
 import ecLogo from "../../images/ec-logo.png"
 // import twitter from "../../images/tw.png";
+import usfLogo from "../../images/usf-logo.png";
 
 const ResultCard = ({ person }) => {
   const useStyles = makeStyles((theme) => ({
@@ -28,9 +29,12 @@ const ResultCard = ({ person }) => {
   const [collegePhoto, setCollegPhoto] = useState("")
 
   useEffect(() => {
-    if(person.college == "Eckerd College"){
+    if(person.college === "Eckerd College"){
       setCollegPhoto(ecLogo)
     }
+     if (person.college === "University of South Florida") {
+       setCollegPhoto(usfLogo);
+     }
   },[])
 
   const classes = useStyles();
@@ -72,7 +76,23 @@ const ResultCard = ({ person }) => {
             className={classes.large}
           />
         </Link>
-        <img className="ec-card-logo" src={collegePhoto} alt="eckerd-college" />
+        {/* {(function() {
+        switch(person.college) {
+         case 'Eckerd College':
+          return <img className="ec-card-logo" src={collegePhoto} alt="eckerd-college" />;
+          case 'University of South Florida':
+          return <img className="usf-card-logo" src={collegePhoto} alt="eckerd-college" />;
+         default:
+          return null;
+         }
+        }
+         )}
+         */}
+        <img
+          className="ec-card-logo"
+          src={collegePhoto}
+          alt="eckerd-college"
+        />
       </div>
 
       <div className="user-info-card">
@@ -162,8 +182,6 @@ const ResultCard = ({ person }) => {
               return null;
           }
         })()}
-
-       
       </div>
     </div>
   );

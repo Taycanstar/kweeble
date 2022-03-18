@@ -69,18 +69,21 @@ const MainText = () => {
               College:
             </label> */}
             <select
-            className="col-home"
+              className="col-home"
               name="college"
               id="college"
               onChange={(e) => setCollege(e.target.value)}
             >
               <option value="" selected disabled hidden>
-                Choose College 
+                Choose College
               </option>
               <option value="Eckerd College">Eckerd College</option>
-               {/* <option value="Polk State College">Polk State College</option> */}
+              <option value="University of South Florida">
+                University of South Florida
+              </option>
+              {/* <option value="Polk State College">Polk State College</option> */}
             </select>
-          </div> 
+          </div>
 
           {results.length > 0 && (
             <ul className="results">
@@ -88,7 +91,7 @@ const MainText = () => {
                 .filter((person) => {
                   if (
                     college === "Eckerd College" ||
-                    college === "Polk State College"
+                    college === "University of South Florida"
                   ) {
                     if (query === "") {
                       return null;
@@ -122,18 +125,18 @@ const MainText = () => {
                       }
                     }
 
-                       if (person.gradeLevel !== undefined) {
-                         if (query === "") {
-                           return null;
-                         } else if (
-                           person.gradeLevel
-                             .toLowerCase()
-                             .includes(query.toLocaleLowerCase()) &&
-                           person.college === college
-                         ) {
-                           return person;
-                         }
-                       }
+                    if (person.gradeLevel !== undefined) {
+                      if (query === "") {
+                        return null;
+                      } else if (
+                        person.gradeLevel
+                          .toLowerCase()
+                          .includes(query.toLocaleLowerCase()) &&
+                        person.college === college
+                      ) {
+                        return person;
+                      }
+                    }
 
                     if (person.major !== undefined) {
                       if (query === "") {

@@ -150,7 +150,8 @@ const Signup = (props) => {
               id="username-error"
               className="text-danger"
             >
-              Your username can only contain letters, numbers,  ' . ' , ' - ' and '_'
+              Your username can only contain letters, numbers, ' . ' , ' - ' and
+              '_'
             </p>
           )}
           <div className="pass-vision">
@@ -416,6 +417,9 @@ const Signup = (props) => {
                 Choose here
               </option>
               <option value="Eckerd College">Eckerd College</option>
+              <option value="University of South Florida">
+                University of South Florida
+              </option>
               {/* <option value="Polk State College">Polk State College</option> */}
             </select>
           </div>
