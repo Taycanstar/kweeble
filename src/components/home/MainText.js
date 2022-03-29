@@ -78,6 +78,18 @@ const MainText = () => {
                 Choose College
               </option>
               <option value="Eckerd College">Eckerd College</option>
+              <option value="Florida State University">
+                Florida State University
+              </option>
+              <option value="University of Central Florida">
+                University of Central Florida
+              </option>
+              <option value="University of Florida">
+                University of Florida
+              </option>
+
+              <option value="University of Miami">University of Miami</option>
+
               <option value="University of South Florida">
                 University of South Florida
               </option>
@@ -91,6 +103,10 @@ const MainText = () => {
                 .filter((person) => {
                   if (
                     college === "Eckerd College" ||
+                    college === "Florida State University" ||
+                    college === "University of Central Florida" ||
+                    college === "University of Florida" ||
+                    college === "University of Miami" ||
                     college === "University of South Florida"
                   ) {
                     if (query === "") {

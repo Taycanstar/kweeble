@@ -3,10 +3,14 @@ import { Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import ig from "../../images/igg.png";
 import snap from "../../images/sn.png";
-import {Link} from 'react-router-dom';
-import ecLogo from "../../images/ec-logo.png"
+import { Link } from "react-router-dom";
+import ecLogo from "../../images/ec-logo.png";
 // import twitter from "../../images/tw.png";
 import usfLogo from "../../images/usf-logo.png";
+import ufLogo from "../../images/uf.png";
+import ucfLogo from "../../images/ucf.png";
+import fsuLogo from "../../images/fsu.png";
+import umLogo from "../../images/um.png";
 
 const ResultCard = ({ person }) => {
   const useStyles = makeStyles((theme) => ({
@@ -25,32 +29,48 @@ const ResultCard = ({ person }) => {
       height: theme.spacing(9),
     },
   }));
-  
-  const [collegePhoto, setCollegPhoto] = useState("")
+
+  const [collegePhoto, setCollegPhoto] = useState("");
 
   useEffect(() => {
-    if(person.college === "Eckerd College"){
-      setCollegPhoto(ecLogo)
+    if (person.college === "Eckerd College") {
+      setCollegPhoto(ecLogo);
     }
-     if (person.college === "University of South Florida") {
-       setCollegPhoto(usfLogo);
-     }
-  },[])
+    if (person.college === "University of South Florida") {
+      setCollegPhoto(usfLogo);
+    }
+    if (person.college === "University of Florida") {
+      setCollegPhoto(ufLogo);
+    }
+    if (person.college === "University of Central Florida") {
+      setCollegPhoto(ucfLogo);
+    }
+    if (person.college === "University of Miami") {
+      setCollegPhoto(umLogo);
+    }
+    if (person.college === "Florida State University") {
+      setCollegPhoto(fsuLogo);
+    }
+  }, []);
 
   const classes = useStyles();
 
   const [isMedia, setIsMedia] = useState("");
-
-  
 
   useEffect(() => {
     if (person.snapchat === undefined && person.instagram === undefined) {
       setIsMedia("");
     } else if (person.snapchat === "" && person.instagram === "") {
       setIsMedia("");
-    } else if (person.instagram !== "" && (person.snapchat === "" || person.snapchat === undefined )  ) {
+    } else if (
+      person.instagram !== "" &&
+      (person.snapchat === "" || person.snapchat === undefined)
+    ) {
       setIsMedia("insta");
-    } else if (person.snapchat !== "" && (person.instagram === "" || person.instagram === undefined)) {
+    } else if (
+      person.snapchat !== "" &&
+      (person.instagram === "" || person.instagram === undefined)
+    ) {
       setIsMedia("snap");
     } else if (person.snapchat !== "" && person.instagram !== "") {
       setIsMedia("both");
@@ -59,9 +79,6 @@ const ResultCard = ({ person }) => {
     }
   }, [isMedia]);
 
-  
- 
-  
   return (
     <div className="result-card">
       {/* To make this work either:
@@ -88,11 +105,7 @@ const ResultCard = ({ person }) => {
         }
          )}
          */}
-        <img
-          className="ec-card-logo"
-          src={collegePhoto}
-          alt="eckerd-college"
-        />
+        <img className="ec-card-logo" src={collegePhoto} alt="college logo" />
       </div>
 
       <div className="user-info-card">
