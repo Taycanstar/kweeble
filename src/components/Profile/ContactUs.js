@@ -13,7 +13,7 @@ const ContactUs = () => {
         </h3>
       </div>
       <div className="priv-main-para">
-        <h2>kweeble27@gmail.com</h2>
+        <h2>support@kweeble.com</h2>
       </div>
     </div>
   );

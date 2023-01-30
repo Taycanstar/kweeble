@@ -24,6 +24,7 @@ const Signup = (props) => {
    upd.push(" ")
  }
 
+ 
   const [specialCharError, setSpecialCharError] = useState(false)
 
   const { error, name, email, password, username, } = data;
